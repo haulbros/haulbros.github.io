@@ -1,10 +1,12 @@
 /* Edit this file with your real business info. Anything left blank keeps its placeholder. */
 window.SITE = {
-  phone: "",            // e.g. "(281) 555-0123"
-  phoneDigits: "",      // digits only for links, e.g. "12815550123"
-  email: "",            // e.g. "hello@haulbros.com"
-  hours: "",            // e.g. "Mon–Sat 8am–6pm"
-  instagram: "", facebook: "", tiktok: "",   // full profile URLs
+  phone: "(346) 229-9942",
+  phoneDigits: "13462299942",   // used for tel:+13462299942 and sms:+13462299942 links
+  email: "haulbroshauling@gmail.com",
+  hours: "Mon\u2013Fri 7 AM\u20137 PM, Sat 8 AM\u20135 PM, Sun closed",
+  instagram: "https://www.instagram.com/haulbros_/",
+  facebook: "https://www.facebook.com/profile.php?id=61594964889182",
+  tiktok: "",
   /* Quote form endpoint. Works with Formspree, Getform, Web3Forms, etc. */
   formEndpoint: "",     // e.g. "https://formspree.io/f/xxxxxxxx"
   /* Optional starting prices shown under each load size (leave "" to show "Free quote") */
