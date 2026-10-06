@@ -230,7 +230,6 @@ window.HaulEstimator3D = function (opts) {
   }
   var builders = {
     couch:    function (g) { return sofa(g, 7, 2.8, 3, mat(0x34456b), mat(0x3d5080), mat(0x4a5f96), CY); },
-    loveseat: function (g) { return sofa(g, 5, 2.6, 2.8, mat(0x5a3d6e), mat(0x674680), mat(0x7a559a), CY); },
     recliner: function (g) { return sofa(g, 3, 3, 3, mat(0x4a3b2f), mat(0x57453a), mat(0x6a5546), ACC); },
     mattress: function (g) {
       var m = box(g, 6.6, 0.8, 4.9, mat(0xc9d3ea), 0, 0, 0); box(g, 6.3, 0.05, 4.6, mat(0xe6ecfb), 0, 0.8, 0, false);

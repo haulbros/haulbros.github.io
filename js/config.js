@@ -82,7 +82,6 @@ window.SITE = {
        fee = add-on dollars per placement (fridge = $75 + $50 refrigerant). */
     items: [
       { id: "couch",    label: "Couch",          name: "Couch",       plural: "Couches",     units: 1, vol: 40 },
-      { id: "loveseat", label: "Loveseat",       name: "Loveseat",    plural: "Loveseats",   units: 1, vol: 32 },
       { id: "recliner", label: "Recliner/Chair", name: "Chair",       plural: "Chairs",      units: 1, vol: 22 },
       { id: "mattress", label: "Mattress",       name: "Mattress",    plural: "Mattresses",  units: 1, vol: 28, fee: 50 },
       { id: "boxspring",label: "Box Spring",     name: "Box Spring",  plural: "Box Springs", units: 1, vol: 24, fee: 50 },
@@ -103,7 +102,7 @@ window.SITE = {
     presets: [
       { id: "garage", name: "Garage cleanout",  mix: { boxes: 3, bags: 1, table: 1, grill: 1, tires: 4, yard: 1 } },
       { id: "bedroom", name: "Bedroom clear-out", mix: { mattress: 1, boxspring: 1, dresser: 1, tv: 1, boxes: 1 } },
-      { id: "living", name: "Living room redo", mix: { couch: 1, loveseat: 1, recliner: 1, tv: 1, table: 1 } },
+      { id: "living", name: "Living room redo", mix: { couch: 1, recliner: 1, tv: 1, table: 1 } },
       { id: "appliance", name: "Appliance swap",   mix: { fridge: 1, washer: 1, dryer: 1, stove: 1 } },
       { id: "yard", name: "Yard cleanup",     mix: { yard: 3, bags: 2, grill: 1 } }
     ]
