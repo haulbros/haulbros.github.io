@@ -169,7 +169,11 @@
   var toastTimer = 0;
   function toast(msg, ms) {
     els.toast.textContent = msg; els.toast.classList.add('show');
-    clearTimeout(toastTimer); toastTimer = setTimeout(function () { els.toast.classList.remove('show'); }, ms || 2600);
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      els.toast.classList.remove('show');
+      toastTimer = setTimeout(function () { els.toast.textContent = ''; }, 500);   /* don't leave stale text in the page */
+    }, ms || 2600);
   }
 
   /* ---------- actions ---------- */

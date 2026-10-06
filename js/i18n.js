@@ -286,6 +286,10 @@ window.I18N = {
     "map_popup_sms": "Hi Haul Bros! I’m in {city} and would like a free quote. My address/ZIP: ",
     "map_hint_touch": "Use two fingers to move the map",
     "map_hint_wheel": "Click the map to zoom with your mouse wheel",
+    "map_zoom_in": "Zoom in",
+    "map_zoom_out": "Zoom out",
+    "map_close": "Close popup",
+    "map_leaflet": "A JavaScript library for interactive maps",
     "bar_free_quote": "Free Quote",
     "map_center": "Service area center"
   },
@@ -571,6 +575,10 @@ window.I18N = {
     "map_popup_sms": "¡Hola Haul Bros! Estoy en {city} y quiero una cotización gratis. Mi dirección/código postal: ",
     "map_hint_touch": "Usa dos dedos para mover el mapa",
     "map_hint_wheel": "Haz clic en el mapa para acercar con la rueda del mouse",
+    "map_zoom_in": "Acercar",
+    "map_zoom_out": "Alejar",
+    "map_close": "Cerrar ventana",
+    "map_leaflet": "Una biblioteca de JavaScript para mapas interactivos",
     "bar_free_quote": "Cotización",
     "map_center": "Centro de la zona de servicio"
   }

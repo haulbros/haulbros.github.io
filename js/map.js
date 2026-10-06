@@ -102,12 +102,24 @@
       mapEl.addEventListener('mouseleave', function () { map.scrollWheelZoom.disable(); });
     }
     paintHint(); hint.hidden = false;
+    paintLeaflet(); map.on('popupopen', paintLeaflet);
     loading.hidden = true; done = true;
+  }
+  /* Leaflet's built-in control labels follow the page language */
+  function paintLeaflet() {
+    if (!map) return;
+    var c = map.getContainer();
+    [['.leaflet-control-zoom-in', 'map_zoom_in'], ['.leaflet-control-zoom-out', 'map_zoom_out'], ['.leaflet-popup-close-button', 'map_close']].forEach(function (p) {
+      Array.prototype.forEach.call(c.querySelectorAll(p[0]), function (el) { var v = T(p[1]); el.setAttribute('title', v); el.setAttribute('aria-label', v); });
+    });
+    var lf = c.querySelector('.leaflet-control-attribution a[href*="leafletjs"]');
+    if (lf) lf.setAttribute('title', T('map_leaflet'));
   }
   function paintHint() { hint.textContent = T(coarse ? 'map_hint_touch' : 'map_hint_wheel'); }
 
   d.addEventListener('langchange', function () {
     if (hint) paintHint();
+    paintLeaflet();
     markers.forEach(function (m) { if (m.isPopupOpen()) m.getPopup().setContent(popupHtml(m._city)); });
   });
 
