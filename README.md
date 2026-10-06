@@ -23,3 +23,8 @@ Design decisions follow the `ui-ux-pro-max` skill in `.claude/skills/`.
 ## Service area map
 - `js/map.js` lazy-loads Leaflet 1.9.4 from cdnjs with OpenStreetMap tiles. Center, radius (35 miles) and city list are in `serviceMap` in `js/config.js`; only cities inside the circle are drawn. If Leaflet cannot load, a styled city list is shown instead.
 - The "within 35 miles of Fulshear" wording in `index.html` and `js/i18n.js` is plain text, so update it too if you change the radius.
+
+## Estimator pricing and branding
+- Capacity = `widthFt x lengthFt x usableLoadHeightFt` in `estimator.trailer` (`js/config.js`); change `usableLoadHeightFt` after you measure the trailer. Tier anchors scale with it (1/4, 1/2, 3/4, Full = 25/50/75/100% of capacity).
+- Prices are interpolated between the tier ranges in `prices`, rounded to the nearest $5, never below the Single Item minimum, and one lone item is always Single Item. Loads over one trailer are priced as full trailers plus the leftover.
+- Logo files: `assets/logo-wide-*.webp` and `assets/logo-round-*.webp` are resized copies of `haulbros_logo_wide.png` / `haulbros_profile.png` (the originals are not loaded by the page). Brand red (`--red`, sampled from the logo, about #F80010) is defined at the top of `css/style.css`.

@@ -56,6 +56,23 @@
   menu.addEventListener('click', function (e) { if (e.target.tagName === 'A') setMenu(false); });
   d.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setMenu(false); toggle.focus(); } });
 
+  /* ---- Active nav link (scroll-spy) ---- */
+  var spyLinks = $$('.menu a[href^="#"]:not(.btn)');
+  function spy() {
+    var cur = null, line = 120;
+    spyLinks.forEach(function (a) {
+      var sec = d.getElementById(a.getAttribute('href').slice(1));
+      if (!sec) return;
+      var r = sec.getBoundingClientRect();
+      if (r.top <= line && r.bottom > line) cur = a;
+    });
+    spyLinks.forEach(function (a) {
+      var on = a === cur; a.classList.toggle('active', on);
+      if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+    });
+  }
+  spy(); window.addEventListener('scroll', spy, { passive: true });
+
   /* ---- Scroll reveal (staggered within each group) ---- */
   var items = $$('.reveal');
   items.forEach(function (el) {

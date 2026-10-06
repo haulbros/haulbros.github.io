@@ -6,7 +6,7 @@
   if (!E || !root) return;
 
   var $ = function (s, c) { return (c || d).querySelector(s); };
-  var T = E.trailer, FULL = T.fullCuFt;
+  var T = E.trailer, FULL = T.widthFt * T.lengthFt * T.usableLoadHeightFt;   /* capacity in cu ft */
   var X = window.t || function (k, v, f) { return f != null ? f : k; };   /* translate */
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var digits = (S.phoneDigits || '').replace(/\D/g, '');
@@ -32,10 +32,28 @@
 
   /* ---------- pricing ---------- */
   function range(key) { var p = S.prices[key]; return [p[0], p[1]]; }
-  function tierFor(vol, units) {
+  var STEP = 5;                                           /* displayed prices round to the nearest $5 */
+  function round5(n) { return Math.round(n / STEP) * STEP; }
+  /* Anchor points (cu ft -> price range) from config: Single at 0, then each tier at fraction x capacity. */
+  function anchors() { return E.tiers.map(function (t) { return { v: t.fraction * FULL, r: range(t.key) }; }); }
+  /* Linear interpolation of the low and high price between the two surrounding anchors. */
+  function interp(v) {
+    var a = anchors(), n = a.length;
+    if (v >= a[n - 1].v) return a[n - 1].r.slice();
+    for (var i = 0; i < n - 1; i++) {
+      if (v <= a[i + 1].v) {
+        var k = (v - a[i].v) / (a[i + 1].v - a[i].v);
+        return [a[i].r[0] + (a[i + 1].r[0] - a[i].r[0]) * k, a[i].r[1] + (a[i + 1].r[1] - a[i].r[1]) * k];
+      }
+    }
+    return a[0].r.slice();
+  }
+  /* Nearest tier by volume (Single only when exactly one unit is loaded). */
+  function nearestTier(vol, units) {
     if (units === 1) return E.tiers[0];
-    for (var i = 1; i < E.tiers.length; i++) if (vol <= E.tiers[i].maxCuFt) return E.tiers[i];
-    return E.tiers[E.tiers.length - 1];
+    var best = E.tiers[1];
+    for (var i = 1; i < E.tiers.length; i++) if (Math.abs(vol - E.tiers[i].fraction * FULL) < Math.abs(vol - best.fraction * FULL)) best = E.tiers[i];
+    return best;
   }
   function totals() {
     var vol = 0, units = 0, fees = 0;
@@ -45,17 +63,22 @@
   function estimate() {
     var t = totals();
     if (!state.items.length) return null;
-    var low = 0, high = 0, tier, trips = Math.ceil(t.vol / FULL), over = t.vol > FULL;
+    var r, tier, trips = Math.ceil(t.vol / FULL), over = t.vol > FULL, about = true;
     if (!over) {
-      tier = tierFor(t.vol, t.units); var r = range(tier.key); low = r[0]; high = r[1];
+      if (t.units === 1) { r = range('single'); tier = E.tiers[0]; about = false; }   /* exactly one item = Single Item */
+      else { r = interp(t.vol); tier = nearestTier(t.vol, t.units); }
     } else {
       var fullTrips = Math.floor(t.vol / FULL), rem = t.vol - fullTrips * FULL, rf = range('full');
-      low = rf[0] * fullTrips; high = rf[1] * fullTrips;
-      if (rem > 0) { var rr = range(tierFor(rem, 2).key); low += rr[0]; high += rr[1]; }
-      tier = E.tiers[E.tiers.length - 1];
+      r = [rf[0] * fullTrips, rf[1] * fullTrips];
+      if (rem > 0) { var rr = interp(rem); r = [r[0] + rr[0], r[1] + rr[1]]; }
+      tier = E.tiers[E.tiers.length - 1]; about = false;
     }
-    return { vol: t.vol, units: t.units, fees: t.fees, tier: tier, trips: trips, over: over, low: low + t.fees, high: high + t.fees };
+    var floor = range('single')[0];
+    var low = Math.max(floor, round5(r[0] + t.fees)), high = Math.max(low, round5(r[1] + t.fees));
+    return { vol: t.vol, units: t.units, fees: t.fees, tier: tier, about: about, trips: trips, over: over, low: low, high: high };
   }
+  /* "About 1/2 Trailer" for interpolated loads; plain label for Single Item. */
+  function tierText(e) { var l = tierLabel(e.tier); return e.about ? X('tier_about', { tier: l }) : l; }
   function money(n) { return '$' + n; }
   function rangeText(e) { return money(e.low) + ' – ' + money(e.high); }
 
@@ -91,12 +114,13 @@
     var pct = Math.min(tot.vol / FULL, 1) * 100;
     els.fill.style.width = pct + '%';
     els.meter.setAttribute('aria-valuenow', Math.round(pct));
-    els.meter.setAttribute('aria-valuetext', e ? tierLabel(e.tier) + (e.over ? ', ' + X('est_over_vt') : '') : X('est_tier_empty'));
+    els.meter.setAttribute('aria-valuetext', e ? tierText(e) + (e.over ? ', ' + X('est_over_vt') : '') : X('est_tier_empty'));
     els.meter.classList.toggle('full', pct >= 95);
+    root.classList.toggle('is-full', pct >= 95);
     var over = !!(e && e.over);
     els.meter2.hidden = !over; els.over.hidden = !over;
     if (over) els.fill2.style.width = Math.min((tot.vol - FULL) / FULL, 1) * 100 + '%';
-    els.tier.textContent = !e ? X('est_tier_empty') : (over ? X('est_tier_over') : tierLabel(e.tier));
+    els.tier.textContent = !e ? X('est_tier_empty') : (over ? X('est_tier_over') : tierText(e));
     var active = !e ? -1 : (over ? 4 : (e.tier.key === 'single' ? 0 : E.tiers.indexOf(e.tier)));
     Array.prototype.forEach.call(els.scale, function (s, i) { s.classList.toggle('on', i === active); });
 
@@ -104,15 +128,15 @@
 
     var list = itemsText();
     els.summary.textContent = !e ? X('est_summary_empty')
-      : list + ' · ' + (over ? X('est_trailers', { n: e.trips }) : tierLabel(e.tier)) + (e.fees ? ' · ' + X('est_includes_addons', { n: e.fees }) : '');
+      : list + ' · ' + (over ? X('est_trailers', { n: e.trips }) : tierText(e)) + (e.fees ? ' · ' + X('est_includes_addons', { n: e.fees }) : '');
     clearTimeout(liveTimer);
     liveTimer = setTimeout(function () {
-      els.live.textContent = e ? X('est_live', { low: money(e.low), high: money(e.high) }) + ' ' + (over ? X('est_live_over') : tierLabel(e.tier)) : X('est_live_empty');
+      els.live.textContent = e ? X('est_live', { low: money(e.low), high: money(e.high) }) + ' ' + (over ? X('est_live_over') : tierText(e)) : X('est_live_empty');
     }, 500);
 
     /* text / call buttons */
     if (digits) {
-      var body = e ? X('sms_body', { items: list, tier: over ? X('sms_trailers', { n: e.trips }) : tierLabel(e.tier), range: rangeText(e) })
+      var body = e ? X('sms_body', { items: list, tier: over ? X('sms_trailers', { n: e.trips }) : tierText(e), range: rangeText(e) })
                    : X('sms_empty');
       els.text.href = 'sms:+' + digits + '?&body=' + encodeURIComponent(body);
       els.call.href = 'tel:+' + digits;
@@ -129,7 +153,7 @@
     els.clear.disabled = !state.items.length;
 
     if (view) view.setFill(tot.vol);
-    if (tot.vol >= E.celebrateAtCuFt) {
+    if (tot.vol >= E.celebrateAtFraction * FULL) {
       if (!state.celebrated) { state.celebrated = true; toast(X('toast_full'), 4200); if (view) view.confetti(); }
     } else state.celebrated = false;
   }

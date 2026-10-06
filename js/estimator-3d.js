@@ -4,7 +4,7 @@ window.HaulEstimator3D = function (opts) {
   var THREE = window.THREE;
   if (!THREE) return null;
   var canvas = opts.canvas, stage = opts.stage, E = opts.config, T = E.trailer;
-  var BW = T.widthFt, BL = T.lengthFt, LH = T.loadHeightFt, FULL = T.fullCuFt;
+  var BW = T.widthFt, BL = T.lengthFt, LH = T.usableLoadHeightFt, FULL = BW * BL * LH;
   var DECK_Y = 1.9;
   var ACC = 0x39ff9c, CY = 0x22d3ee, BG = 0x080c17;
   var defs = {};
@@ -663,7 +663,7 @@ window.HaulEstimator3D = function (opts) {
   if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; setRun(); }).observe(stage);
   document.addEventListener('visibilitychange', function () { tabVisible = !document.hidden; setRun(); });
 
-  var pulse = 0, c1 = new THREE.Color(ACC), c2 = new THREE.Color(CY), tmp = new THREE.Color();
+  var pulse = 0, c1 = new THREE.Color(ACC), c2 = new THREE.Color(CY), c3 = new THREE.Color(0xf80010), tmp = new THREE.Color();
   function frame(now) {
     raf = requestAnimationFrame(frame);
     var dt = Math.min((now - last) / 1000, 0.05); last = now;
@@ -679,6 +679,7 @@ window.HaulEstimator3D = function (opts) {
       f.g.visible = show && (i === 0 || ghostA > 0.05);
       f.g.position.y = f.y0 + f.y + (i === 0 ? 0 : 0);
       var fr = f.frac || 0; tmp.copy(c1).lerp(c2, Math.min(1, fr * 1.2));
+      if (fr > 0.9) tmp.lerp(c3, Math.min(1, (fr - 0.9) / 0.07));   /* logo red when the trailer is full */
       var glow = 0.8 + (fr > 0.94 ? 0.2 * Math.sin(pulse * 8) : 0.08 * Math.sin(pulse * 3));
       f.mats[0].color.copy(tmp).multiplyScalar(glow); f.plane.material.color.copy(tmp);
     });

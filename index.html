@@ -72,7 +72,7 @@
 <header class="site-header" id="top">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Haul Bros home" data-i18n-attr="aria-label:aria_brand_home">
-      <img src="assets/haulbros_profile_96.png" width="40" height="40" alt="Haul Bros logo">
+      <img class="brand-logo" src="assets/logo-round-96.webp" srcset="assets/logo-round-48.webp 48w, assets/logo-round-96.webp 96w" sizes="48px" width="48" height="48" alt="Haul Bros logo">
       <span class="brand-name">HAUL <b>BROS</b></span>
     </a>
     <div class="lang-toggle in-header" role="group" aria-label="Language" data-i18n-attr="aria-label:aria_language"><button type="button" data-lang="en" aria-pressed="true" lang="en" aria-label="English">EN</button><button type="button" data-lang="es" aria-pressed="false" lang="es" aria-label="Español">ES</button></div>
@@ -97,6 +97,11 @@
 <!-- 1. HERO -->
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-bg" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span><span class="grid"></span></div>
+  <div class="wrap hero-logo-row">
+    <div class="hero-logo">
+      <img src="assets/logo-wide-360.webp" srcset="assets/logo-wide-240.webp 240w, assets/logo-wide-360.webp 360w, assets/logo-wide-480.webp 480w, assets/logo-wide-660.webp 660w" sizes="(max-width: 640px) 240px, 360px" width="360" height="316" fetchpriority="high" alt="Haul Bros logo">
+    </div>
+  </div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow"><span class="dot"></span> Katy &middot; Fulshear &middot; Richmond</p>
@@ -108,6 +113,7 @@
         <a class="btn btn-ghost" href="tel:" data-bind-tel><svg class="ico"><use href="#i-phone"/></svg><span data-i18n="call_text_us">Call/Text Us</span></a>
         <span class="badge-es" translate="no"><svg class="ico"><use href="#i-msg"/></svg><span lang="es">¡Se Habla Español!</span></span>
       </div>
+      <p class="hero-tagline" data-i18n="teen_owned_hardworking_ready_to_hel">Teen-owned. Hardworking. Ready to help.</p>
       <p class="hero-phone"><span data-i18n="click_to_call">Click to call:</span> <a href="tel:" data-bind-tel><span data-bind="phone">[PHONE]</span></a></p>
       <ul class="chips" aria-label="Highlights" data-i18n-attr="aria-label:aria_highlights">
         <li data-i18n="free_quotes">Free quotes</li><li data-i18n="upfront_pricing">Upfront pricing</li><li data-i18n="local_reliable">Local &amp; reliable</li>
@@ -156,7 +162,7 @@
 </section>
 
 <!-- 3. PRICING -->
-<section id="pricing" class="section alt" aria-labelledby="pricing-title">
+<section id="pricing" class="section alt wm" aria-labelledby="pricing-title">
   <div class="wrap">
     <header class="section-head reveal">
       <p class="kicker" data-i18n="pricing">Pricing</p>
@@ -357,16 +363,19 @@
 </section>
 
 <!-- 8. ABOUT -->
-<section id="about" class="section alt" aria-labelledby="about-title">
+<section id="about" class="section alt wm" aria-labelledby="about-title">
   <div class="wrap about">
     <div class="reveal">
       <p class="kicker" data-i18n="about_haul_bros">About Haul Bros</p>
       <h2 id="about-title" data-i18n="local_reliable_simple">Local. Reliable. <span class="neon">Simple.</span></h2>
-      <p class="lead" data-i18n="haul_bros_is_owned_and_run_by_two_teen">Haul Bros is owned and run by two teen brothers. We are a local junk removal business serving Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire, Sealy, Cypress &amp; surrounding areas (within 35 miles of Fulshear). We're focused on providing fast, affordable and reliable junk removal without the hassle.</p>
-      <a class="btn btn-primary" href="#quote" data-i18n="get_a_free_quote">Get a Free Quote</a>
+      <p class="lead" data-i18n="about_teen_message">We're two teen best friends who started Haul Bros to learn, grow and get real experience running a business. We're excited to learn everything we can, work hard and expand step by step. Every job teaches us something new, and we treat your home like our own. Got questions, or just want to talk business? Call or text us, we'd love to hear from you!</p>
+      <div class="cta-row">
+        <a class="btn btn-ghost" href="tel:" data-bind-tel><svg class="ico"><use href="#i-phone"/></svg><span data-i18n="call_us">Call us</span></a>
+        <a class="btn btn-primary" href="sms:" data-bind-sms><svg class="ico"><use href="#i-msg"/></svg><span data-i18n="text_us">Text us</span></a>
+      </div>
     </div>
     <figure class="glass reveal about-logo">
-      <img src="assets/haulbros_logo_wide.png" width="660" height="580" loading="lazy" alt="Haul Bros logo">
+      <img src="assets/logo-wide-360.webp" srcset="assets/logo-wide-240.webp 240w, assets/logo-wide-360.webp 360w, assets/logo-wide-480.webp 480w" sizes="(max-width: 640px) 240px, 320px" width="360" height="316" loading="lazy" alt="Haul Bros logo">
     </figure>
   </div>
 </section>
@@ -401,7 +410,7 @@
 
 <footer class="site-footer">
   <div class="wrap foot">
-    <a class="brand" href="#top" aria-label="Haul Bros, back to top" data-i18n-attr="aria-label:aria_brand_top"><img src="assets/haulbros_profile_96.png" width="36" height="36" alt="Haul Bros logo"><span class="brand-name">HAUL <b>BROS</b></span></a>
+    <a class="brand" href="#top" aria-label="Haul Bros, back to top" data-i18n-attr="aria-label:aria_brand_top"><img class="foot-logo" src="assets/logo-wide-180.webp" srcset="assets/logo-wide-180.webp 180w, assets/logo-wide-360.webp 360w" sizes="180px" width="180" height="158" loading="lazy" alt="Haul Bros logo"></a>
     <p data-i18n="junk_removal_in_katy_fulshear_richmond">Junk removal in Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire, Sealy, Cypress &amp; surrounding areas (within 35 miles of Fulshear).</p>
     <p class="badge-es" translate="no"><svg class="ico"><use href="#i-msg"/></svg><span lang="es">¡Se Habla Español!</span></p>
     <p><a href="tel:" data-bind-tel><span data-bind="phone">[PHONE]</span></a> &middot; <a href="mailto:" data-bind-mail><span data-bind="email">[EMAIL]</span></a></p>

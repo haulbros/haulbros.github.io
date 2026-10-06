@@ -62,23 +62,26 @@ window.SITE = {
   /* ---------------- 3D load estimator ---------------- */
   estimator: {
     soundDefault: false,            // sound effects start OFF
-    trailer: { widthFt: 5, lengthFt: 10, loadHeightFt: 4, fullCuFt: 200 },  // 5x10 bed, 4 ft usable height = 200 cu ft
+    trailer: { widthFt: 5, lengthFt: 10, usableLoadHeightFt: 4 },   // capacity = width x length x usableLoadHeightFt (5 x 10 x 4 = 200 cu ft = Full Trailer). Change the height after you measure.
     maxTrailers: 2,                 // loads beyond this ask the customer to text us
     maxPlacements: 60,              // performance cap on 3D objects
-    celebrateAtCuFt: 190,           // confetti + "Trailer full!" when the load reaches this volume
-    /* Tier = smallest tier whose maxCuFt holds the load (round up). "single" applies only when exactly 1 unit is loaded. */
+    celebrateAtFraction: 0.95,      // confetti + "Trailer full!" once the load reaches this share of capacity
+    /* Pricing is interpolated between these anchors: each tier's price range sits at fraction x capacity
+       (1/4 = 50 cu ft, 1/2 = 100, 3/4 = 150, Full = 200 with the default 4 ft height). "single" is the anchor at
+       0 cu ft, so the estimate never drops below the Single Item minimum. A lone unit (1 item) is always priced
+       as Single Item. Displayed prices are rounded to the nearest $5. */
     tiers: [
-      { key: "single",  label: "Single Item",         short: "Single",  maxCuFt: 50 },
-      { key: "quarter", label: "1/4 Trailer",         short: "1/4",     maxCuFt: 50 },
-      { key: "half",    label: "1/2 Trailer",         short: "1/2",     maxCuFt: 100 },
-      { key: "three",   label: "3/4 Trailer",         short: "3/4",     maxCuFt: 150 },
-      { key: "full",    label: "Full Trailer (5x10)", short: "Full",    maxCuFt: 200 }
+      { key: "single",  label: "Single Item",         short: "Single",  fraction: 0 },
+      { key: "quarter", label: "1/4 Trailer",         short: "1/4",     fraction: 0.25 },
+      { key: "half",    label: "1/2 Trailer",         short: "1/2",     fraction: 0.5 },
+      { key: "three",   label: "3/4 Trailer",         short: "3/4",     fraction: 0.75 },
+      { key: "full",    label: "Full Trailer (5x10)", short: "Full",    fraction: 1 }
     ],
     /* Item list. vol = approximate cubic feet of trailer space used (per placement).
        units = how many real items one tap adds (boxes and bags come in 5s).
        fee = add-on dollars per placement (fridge = $75 + $50 refrigerant). */
     items: [
-      { id: "couch",    label: "Couch",          name: "Couch",       plural: "Couches",     units: 1, vol: 50 },
+      { id: "couch",    label: "Couch",          name: "Couch",       plural: "Couches",     units: 1, vol: 40 },
       { id: "loveseat", label: "Loveseat",       name: "Loveseat",    plural: "Loveseats",   units: 1, vol: 32 },
       { id: "recliner", label: "Recliner/Chair", name: "Chair",       plural: "Chairs",      units: 1, vol: 22 },
       { id: "mattress", label: "Mattress",       name: "Mattress",    plural: "Mattresses",  units: 1, vol: 28, fee: 50 },
