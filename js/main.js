@@ -16,10 +16,16 @@
     var u = S[a.getAttribute('data-bind-href')];
     if (u) { a.href = u; a.target = '_blank'; a.rel = 'noopener'; } else { a.closest('li').hidden = true; }
   });
-  var pk = { small: 'price-small', quarter: 'price-quarter', half: 'price-half', three: 'price-three', full: 'price-full' };
+  function money(r) { return '$' + r[0] + ' \u2013 $' + r[1]; }
+  var pk = { single: 'price-single', quarter: 'price-quarter', half: 'price-half', three: 'price-three', full: 'price-full' };
   Object.keys(pk).forEach(function (k) {
     var v = S.prices && S.prices[k], e = $('[data-bind="' + pk[k] + '"]');
-    if (v && e) e.textContent = 'Starting at ' + v;
+    if (v && e) e.textContent = money(v);
+  });
+  var al = $('#addons-list');
+  if (al && S.addons) S.addons.forEach(function (a) {
+    var li = d.createElement('li'), l = d.createElement('span'), p = d.createElement('b');
+    l.textContent = a.label; p.textContent = a.price; li.appendChild(l); li.appendChild(p); al.appendChild(li);
   });
   if (S.showReviews) { var rv = $('#reviews'); if (rv) rv.hidden = false; }
   $('#year').textContent = new Date().getFullYear();
