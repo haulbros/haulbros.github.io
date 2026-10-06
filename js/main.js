@@ -21,6 +21,7 @@
     var v = S.prices && S.prices[k], e = $('[data-bind="' + pk[k] + '"]');
     if (v && e) e.textContent = 'Starting at ' + v;
   });
+  if (S.showReviews) { var rv = $('#reviews'); if (rv) rv.hidden = false; }
   $('#year').textContent = new Date().getFullYear();
 
   /* ---- Header + nav ---- */

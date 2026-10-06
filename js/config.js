@@ -7,6 +7,8 @@ window.SITE = {
   instagram: "https://www.instagram.com/haulbros_/",
   facebook: "https://www.facebook.com/profile.php?id=61594964889182",
   tiktok: "",
+  /* Set to true once you have real customer reviews in the Reviews section of index.html */
+  showReviews: false,
   /* Quote form endpoint. Works with Formspree, Getform, Web3Forms, etc. */
   formEndpoint: "",     // e.g. "https://formspree.io/f/xxxxxxxx"
   /* Optional starting prices shown under each load size (leave "" to show "Free quote") */

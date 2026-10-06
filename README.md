@@ -5,8 +5,8 @@ Static one-page site (plain HTML/CSS/JS, no build step). Deploy the folder as-is
 ## Before launch
 1. Edit `js/config.js` — phone, email, hours, social links, optional starting prices.
 2. Quote form: create a form endpoint (Formspree, Getform, Web3Forms…) and paste its URL into `formEndpoint`. Until then the form shows a "not connected" message. Check your provider's plan supports file uploads.
-3. Replace placeholders: truck photo (hero), team photo (About), before/after shots (Gallery) with real photos (WebP, add `width`/`height` + `loading="lazy"`).
-4. Reviews: replace the three placeholder cards with real customer reviews only.
+3. Photos live in `assets/photos/` (optimized copies of the originals, max 1600px, under 400 KB). Add more to the Gallery in `index.html` with `width`/`height` and `loading="lazy"`.
+4. Reviews: the section is hidden. Replace the three placeholder cards in `index.html` with real reviews, then set `showReviews: true` in `js/config.js`.
 5. Confirm the Service Area list and the exceptions list ("We Take Almost Everything!") match what you actually do.
 
 Design decisions follow the `ui-ux-pro-max` skill in `.claude/skills/`.
