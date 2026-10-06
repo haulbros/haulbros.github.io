@@ -4,6 +4,7 @@ window.SITE = {
   phoneDigits: "13462299942",   // used for tel:+13462299942 and sms:+13462299942 links
   email: "haulbroshauling@gmail.com",
   hours: "Mon–Fri 7 AM–7 PM, Sat 8 AM–5 PM, Sun closed",
+  hoursEs: "Lun–Vie 7 AM–7 PM, Sáb 8 AM–5 PM, Dom cerrado",   // shown when Spanish is active
   instagram: "https://www.instagram.com/haulbros_/",
   facebook: "https://www.facebook.com/profile.php?id=61594964889182",
   tiktok: "",
@@ -31,6 +32,32 @@ window.SITE = {
     { label: "Tires", price: "+$15 each" },
     { label: "Concrete, dirt, shingles or heavy debris", price: "quoted on-site" }
   ],
+
+  /* ---------------- Service area map (Leaflet + OpenStreetMap) ---------------- */
+  serviceMap: {
+    /* Fulshear city center (approximate; not a street address). Edit to move the map and circle. */
+    center: { lat: 29.6895, lng: -95.8995 },
+    radiusMiles: 35,
+    /* Only cities inside the circle are drawn (checked in js/map.js). dir = label side; major cities keep their
+       label on small screens, the others show the label only on wide maps (tap the dot for the popup). */
+    cities: [
+      { name: "Fulshear",      lat: 29.6895, lng: -95.8995, dir: "bottom", major: true },
+      { name: "Katy",          lat: 29.7858, lng: -95.8245, dir: "right", major: true },
+      { name: "Cinco Ranch",   lat: 29.7378, lng: -95.7577, dir: "right" },
+      { name: "Simonton",      lat: 29.6955, lng: -95.9886, dir: "left" },
+      { name: "Brookshire",    lat: 29.7861, lng: -95.9502, dir: "top", major: true },
+      { name: "Richmond",      lat: 29.5822, lng: -95.7608, dir: "right", major: true },
+      { name: "Rosenberg",     lat: 29.5572, lng: -95.8085, dir: "bottom", major: true },
+      { name: "Sugar Land",    lat: 29.6197, lng: -95.6349, dir: "top", major: true },
+      { name: "Missouri City", lat: 29.6186, lng: -95.5377, dir: "right" },
+      { name: "Needville",     lat: 29.3944, lng: -95.8380, dir: "bottom" },
+      { name: "Wallis",        lat: 29.6330, lng: -96.0635, dir: "left" },
+      { name: "Sealy",         lat: 29.7808, lng: -96.1569, dir: "left", major: true },
+      { name: "Cypress",       lat: 29.9691, lng: -95.6970, dir: "right", major: true },
+      { name: "Waller",        lat: 30.0555, lng: -95.9279, dir: "top" },
+      { name: "Hempstead",     lat: 30.0974, lng: -96.0780, dir: "top" }
+    ]
+  },
 
   /* ---------------- 3D load estimator ---------------- */
   estimator: {
@@ -71,11 +98,11 @@ window.SITE = {
     ],
     /* "Surprise me" mixes: item id -> number of taps */
     presets: [
-      { name: "Garage cleanout",  mix: { boxes: 3, bags: 1, table: 1, grill: 1, tires: 4, yard: 1 } },
-      { name: "Bedroom clear-out", mix: { mattress: 1, boxspring: 1, dresser: 1, tv: 1, boxes: 1 } },
-      { name: "Living room redo", mix: { couch: 1, loveseat: 1, recliner: 1, tv: 1, table: 1 } },
-      { name: "Appliance swap",   mix: { fridge: 1, washer: 1, dryer: 1, stove: 1 } },
-      { name: "Yard cleanup",     mix: { yard: 3, bags: 2, grill: 1 } }
+      { id: "garage", name: "Garage cleanout",  mix: { boxes: 3, bags: 1, table: 1, grill: 1, tires: 4, yard: 1 } },
+      { id: "bedroom", name: "Bedroom clear-out", mix: { mattress: 1, boxspring: 1, dresser: 1, tv: 1, boxes: 1 } },
+      { id: "living", name: "Living room redo", mix: { couch: 1, loveseat: 1, recliner: 1, tv: 1, table: 1 } },
+      { id: "appliance", name: "Appliance swap",   mix: { fridge: 1, washer: 1, dryer: 1, stove: 1 } },
+      { id: "yard", name: "Yard cleanup",     mix: { yard: 3, bags: 2, grill: 1 } }
     ]
   }
 };

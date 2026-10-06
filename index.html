@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Haul Bros | Junk Removal in Katy &amp; Fulshear</title>
-<meta name="description" content="Fast and affordable junk removal in Katy, Fulshear, Richmond, Brookshire and surrounding areas. Send a photo, get a free quote. No hidden fees.">
+<meta name="description" content="Fast and affordable junk removal in Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire, Sealy, Cypress and surrounding areas (within 35 miles of Fulshear). Send a photo, get a free quote. No hidden fees.">
 <meta name="theme-color" content="#070a12">
 <link rel="icon" href="assets/haulbros_profile_96.png" type="image/png" sizes="96x96">
 <link rel="apple-touch-icon" href="assets/haulbros_profile_96.png">
@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
+<a class="skip-link" href="#main" data-i18n="skip_to_main_content">Skip to main content</a>
 
 <!-- SVG icon sprite (no emoji icons; one consistent 2px-stroke family) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -71,21 +71,23 @@
 
 <header class="site-header" id="top">
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Haul Bros home">
+    <a class="brand" href="#top" aria-label="Haul Bros home" data-i18n-attr="aria-label:aria_brand_home">
       <img src="assets/haulbros_profile_96.png" width="40" height="40" alt="Haul Bros logo">
       <span class="brand-name">HAUL <b>BROS</b></span>
     </a>
+    <div class="lang-toggle in-header" role="group" aria-label="Language" data-i18n-attr="aria-label:aria_language"><button type="button" data-lang="en" aria-pressed="true" lang="en" aria-label="English">EN</button><button type="button" data-lang="es" aria-pressed="false" lang="es" aria-label="Español">ES</button></div>
     <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
-    <nav id="menu" class="menu" aria-label="Primary">
-      <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#estimator">Estimator</a>
-      <a href="#how">How it works</a>
-      <a href="#area">Service area</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a class="btn btn-sm btn-primary menu-cta" href="#quote">Free Quote</a>
+    <nav id="menu" class="menu" aria-label="Primary" data-i18n-attr="aria-label:aria_primary">
+      <a href="#services" data-i18n="services">Services</a>
+      <a href="#pricing" data-i18n="pricing">Pricing</a>
+      <a href="#estimator" data-i18n="estimator">Estimator</a>
+      <a href="#how" data-i18n="how_it_works">How it works</a>
+      <a href="#area" data-i18n="service_area">Service area</a>
+      <a href="#gallery" data-i18n="gallery">Gallery</a>
+      <a href="#about" data-i18n="about">About</a>
+      <a href="#contact" data-i18n="contact">Contact</a>
+      <a class="btn btn-sm btn-primary menu-cta" href="#quote" data-i18n="free_quote">Free Quote</a>
+      <div class="lang-toggle in-menu" role="group" aria-label="Language" data-i18n-attr="aria-label:aria_language"><button type="button" data-lang="en" aria-pressed="true" lang="en" aria-label="English">EN</button><button type="button" data-lang="es" aria-pressed="false" lang="es" aria-label="Español">ES</button></div>
     </nav>
   </div>
 </header>
@@ -98,21 +100,22 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow"><span class="dot"></span> Katy &middot; Fulshear &middot; Richmond</p>
-      <h1 id="hero-title">Fast &amp; Affordable <span class="neon">Junk Removal</span> in Katy &amp; Fulshear</h1>
-      <p class="subhead">Teen-owned junk removal in Katy, Fulshear &amp; surrounding areas</p>
-      <p class="lead">We load it, haul it and clean up after. Send us a photo of your junk and get a free, upfront quote &mdash; no hidden fees.</p>
+      <h1 id="hero-title" data-i18n="fast_affordable_junk_removal_in_katy_f">Fast &amp; Affordable <span class="neon">Junk Removal</span> in Katy &amp; Fulshear</h1>
+      <p class="subhead" data-i18n="teen_owned_junk_removal_in_katy_fulshe">Teen-owned junk removal in Katy, Fulshear &amp; surrounding areas</p>
+      <p class="lead" data-i18n="we_load_it_haul_it_and_clean_up_after_">We load it, haul it and clean up after. Send us a photo of your junk and get a free, upfront quote &mdash; no hidden fees.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#quote">Get a Free Quote</a>
-        <a class="btn btn-ghost" href="tel:" data-bind-tel><svg class="ico"><use href="#i-phone"/></svg><span>Call/Text Us</span></a>
+        <a class="btn btn-primary" href="#quote" data-i18n="get_a_free_quote">Get a Free Quote</a>
+        <a class="btn btn-ghost" href="tel:" data-bind-tel><svg class="ico"><use href="#i-phone"/></svg><span data-i18n="call_text_us">Call/Text Us</span></a>
+        <span class="badge-es" translate="no"><svg class="ico"><use href="#i-msg"/></svg><span lang="es">¡Se Habla Español!</span></span>
       </div>
-      <p class="hero-phone">Click to call: <a href="tel:" data-bind-tel><span data-bind="phone">[PHONE]</span></a></p>
-      <ul class="chips" aria-label="Highlights">
-        <li>Free quotes</li><li>Upfront pricing</li><li>Local &amp; reliable</li>
+      <p class="hero-phone"><span data-i18n="click_to_call">Click to call:</span> <a href="tel:" data-bind-tel><span data-bind="phone">[PHONE]</span></a></p>
+      <ul class="chips" aria-label="Highlights" data-i18n-attr="aria-label:aria_highlights">
+        <li data-i18n="free_quotes">Free quotes</li><li data-i18n="upfront_pricing">Upfront pricing</li><li data-i18n="local_reliable">Local &amp; reliable</li>
       </ul>
     </div>
     <figure class="hero-photo glass">
-      <img src="assets/photos/job-1.jpg" width="1200" height="1600" fetchpriority="high" alt="Pallets, a filing cabinet and trash bags loaded from an office cleanout next to a dumpster">
-      <figcaption>Haul Bros &mdash; locally owned junk removal</figcaption>
+      <img src="assets/photos/job-1.jpg" width="1200" height="1600" fetchpriority="high" alt="Pallets, a filing cabinet and trash bags loaded from an office cleanout next to a dumpster" data-i18n-attr="alt:alt_hero_photo">
+      <figcaption data-i18n="haul_bros_locally_owned_junk_removal">Haul Bros &mdash; locally owned junk removal</figcaption>
     </figure>
   </div>
 </section>
@@ -121,32 +124,32 @@
 <section id="services" class="section" aria-labelledby="services-title">
   <div class="wrap">
     <header class="section-head reveal">
-      <p class="kicker">What we take</p>
-      <h2 id="services-title">If it's junk, <span class="neon">we haul it</span></h2>
-      <p class="sub">Curbside, garage, backyard or inside the house &mdash; we do the heavy lifting.</p>
+      <p class="kicker" data-i18n="what_we_take">What we take</p>
+      <h2 id="services-title" data-i18n="if_it_s_junk_we_haul_it">If it's junk, <span class="neon">we haul it</span></h2>
+      <p class="sub" data-i18n="curbside_garage_backyard_or_inside_the">Curbside, garage, backyard or inside the house &mdash; we do the heavy lifting.</p>
     </header>
     <ul class="cards cols-5">
-      <li class="card glass reveal"><svg class="ico"><use href="#i-sofa"/></svg><h3>Furniture</h3><p>Couches, tables, chairs, dressers and more.</p></li>
-      <li class="card glass reveal"><svg class="ico"><use href="#i-bed"/></svg><h3>Mattresses</h3><p>Any size, box springs and bed frames.</p></li>
-      <li class="card glass reveal"><svg class="ico"><use href="#i-fridge"/></svg><h3>Appliances</h3><p>Fridges, washers, dryers, stoves and water heaters.</p></li>
-      <li class="card glass reveal"><svg class="ico"><use href="#i-leaf"/></svg><h3>Yard Waste</h3><p>Brush, branches, fencing and landscaping debris.</p></li>
-      <li class="card glass reveal"><svg class="ico"><use href="#i-garage"/></svg><h3>Garage Cleanouts</h3><p>Reclaim your garage, shed or storage space.</p></li>
-      <li class="card glass reveal"><svg class="ico"><use href="#i-trash"/></svg><h3>Household Junk</h3><p>Clutter, boxes and everyday items you're done with.</p></li>
-      <li class="card glass reveal"><svg class="ico"><use href="#i-hammer"/></svg><h3>Construction Debris</h3><p>Drywall, lumber, flooring and remodel leftovers.</p></li>
-      <li class="card glass reveal"><svg class="ico"><use href="#i-box"/></svg><h3>Moving Cleanouts</h3><p>Move-in or move-out leftovers, cleared fast.</p></li>
-      <li class="card glass reveal"><svg class="ico"><use href="#i-hot"/></svg><h3>Hot Tub Removal</h3><p>We handle the demo and haul-away.</p></li>
-      <li class="card glass reveal"><svg class="ico"><use href="#i-home"/></svg><h3>Estate Cleanouts</h3><p>Respectful, thorough cleanouts for families.</p></li>
+      <li class="card glass reveal"><svg class="ico"><use href="#i-sofa"/></svg><h3 data-i18n="furniture">Furniture</h3><p data-i18n="couches_tables_chairs_dressers_and_mor">Couches, tables, chairs, dressers and more.</p></li>
+      <li class="card glass reveal"><svg class="ico"><use href="#i-bed"/></svg><h3 data-i18n="mattresses">Mattresses</h3><p data-i18n="any_size_box_springs_and_bed_frames">Any size, box springs and bed frames.</p></li>
+      <li class="card glass reveal"><svg class="ico"><use href="#i-fridge"/></svg><h3 data-i18n="appliances">Appliances</h3><p data-i18n="fridges_washers_dryers_stoves_and_wate">Fridges, washers, dryers, stoves and water heaters.</p></li>
+      <li class="card glass reveal"><svg class="ico"><use href="#i-leaf"/></svg><h3 data-i18n="yard_waste">Yard Waste</h3><p data-i18n="brush_branches_fencing_and_landscaping">Brush, branches, fencing and landscaping debris.</p></li>
+      <li class="card glass reveal"><svg class="ico"><use href="#i-garage"/></svg><h3 data-i18n="garage_cleanouts">Garage Cleanouts</h3><p data-i18n="reclaim_your_garage_shed_or_storage_sp">Reclaim your garage, shed or storage space.</p></li>
+      <li class="card glass reveal"><svg class="ico"><use href="#i-trash"/></svg><h3 data-i18n="household_junk">Household Junk</h3><p data-i18n="clutter_boxes_and_everyday_items_you_r">Clutter, boxes and everyday items you're done with.</p></li>
+      <li class="card glass reveal"><svg class="ico"><use href="#i-hammer"/></svg><h3 data-i18n="construction_debris">Construction Debris</h3><p data-i18n="drywall_lumber_flooring_and_remodel_le">Drywall, lumber, flooring and remodel leftovers.</p></li>
+      <li class="card glass reveal"><svg class="ico"><use href="#i-box"/></svg><h3 data-i18n="moving_cleanouts">Moving Cleanouts</h3><p data-i18n="move_in_or_move_out_leftovers_cleared_">Move-in or move-out leftovers, cleared fast.</p></li>
+      <li class="card glass reveal"><svg class="ico"><use href="#i-hot"/></svg><h3 data-i18n="hot_tub_removal">Hot Tub Removal</h3><p data-i18n="we_handle_the_demo_and_haul_away">We handle the demo and haul-away.</p></li>
+      <li class="card glass reveal"><svg class="ico"><use href="#i-home"/></svg><h3 data-i18n="estate_cleanouts">Estate Cleanouts</h3><p data-i18n="respectful_thorough_cleanouts_for_fami">Respectful, thorough cleanouts for families.</p></li>
     </ul>
 
     <div class="dont glass reveal">
-      <h3><svg class="ico"><use href="#i-check"/></svg> We Take Almost Everything!</h3>
-      <p>Furniture, appliances, yard debris, boxes, garage and office cleanouts. The only exceptions:</p>
+      <h3><svg class="ico"><use href="#i-check"/></svg> <span data-i18n="we_take_almost_everything">We Take Almost Everything!</span></h3>
+      <p data-i18n="furniture_appliances_yard_debris_boxes">Furniture, appliances, yard debris, boxes, garage and office cleanouts. The only exceptions:</p>
       <ul class="dont-list">
-        <li>Hazardous chemicals</li>
-        <li>Wet paint and solvents</li>
-        <li>Asbestos</li>
-        <li>Medical waste</li>
-        <li>Propane tanks and fuel</li>
+        <li data-i18n="hazardous_chemicals">Hazardous chemicals</li>
+        <li data-i18n="wet_paint_and_solvents">Wet paint and solvents</li>
+        <li data-i18n="asbestos">Asbestos</li>
+        <li data-i18n="medical_waste">Medical waste</li>
+        <li data-i18n="propane_tanks_and_fuel">Propane tanks and fuel</li>
       </ul>
     </div>
   </div>
@@ -156,25 +159,25 @@
 <section id="pricing" class="section alt" aria-labelledby="pricing-title">
   <div class="wrap">
     <header class="section-head reveal">
-      <p class="kicker">Pricing</p>
-      <h2 id="pricing-title">Simple, <span class="neon">upfront</span> pricing</h2>
-      <p class="sub">Send us a picture of your junk and we'll give you a free quote. No hidden fees. We haul with a 5x10 trailer.</p>
-      <p class="offer"><svg class="ico"><use href="#i-tag"/></svg> $25 off your first job when you leave us a review!</p>
+      <p class="kicker" data-i18n="pricing">Pricing</p>
+      <h2 id="pricing-title" data-i18n="simple_upfront_pricing">Simple, <span class="neon">upfront</span> pricing</h2>
+      <p class="sub" data-i18n="send_us_a_picture_of_your_junk_and_we_">Send us a picture of your junk and we'll give you a free quote. No hidden fees. We haul with a 5x10 trailer.</p>
+      <p class="offer"><svg class="ico"><use href="#i-tag"/></svg> <span data-i18n="25_off_your_first_job_when_you_leave_u">$25 off your first job when you leave us a review!</span></p>
     </header>
     <ul class="loads">
-      <li class="load glass reveal" style="--fill:12%"><div class="trailer" aria-hidden="true"><i></i></div><h3>Single Item</h3><p>One piece, like a couch or appliance</p><span class="price" data-bind="price-single">Free quote</span></li>
-      <li class="load glass reveal" style="--fill:25%"><div class="trailer" aria-hidden="true"><i></i></div><h3>1/4 Trailer</h3><p>A room's worth of items</p><span class="price" data-bind="price-quarter">Free quote</span></li>
-      <li class="load glass reveal" style="--fill:50%"><div class="trailer" aria-hidden="true"><i></i></div><h3>1/2 Trailer</h3><p>Garage or yard cleanup</p><span class="price" data-bind="price-half">Free quote</span></li>
-      <li class="load glass reveal" style="--fill:75%"><div class="trailer" aria-hidden="true"><i></i></div><h3>3/4 Trailer</h3><p>Large cleanout</p><span class="price" data-bind="price-three">Free quote</span></li>
-      <li class="load glass reveal" style="--fill:100%"><div class="trailer" aria-hidden="true"><i></i></div><h3>Full Trailer (5x10)</h3><p>Whole-property cleanout</p><span class="price" data-bind="price-full">Free quote</span></li>
+      <li class="load glass reveal" style="--fill:12%"><div class="trailer" aria-hidden="true"><i></i></div><h3 data-i18n="single_item">Single Item</h3><p data-i18n="one_piece_like_a_couch_or_appliance">One piece, like a couch or appliance</p><span class="price" data-bind="price-single">Free quote</span></li>
+      <li class="load glass reveal" style="--fill:25%"><div class="trailer" aria-hidden="true"><i></i></div><h3 data-i18n="1_4_trailer">1/4 Trailer</h3><p data-i18n="a_room_s_worth_of_items">A room's worth of items</p><span class="price" data-bind="price-quarter">Free quote</span></li>
+      <li class="load glass reveal" style="--fill:50%"><div class="trailer" aria-hidden="true"><i></i></div><h3 data-i18n="1_2_trailer">1/2 Trailer</h3><p data-i18n="garage_or_yard_cleanup">Garage or yard cleanup</p><span class="price" data-bind="price-half">Free quote</span></li>
+      <li class="load glass reveal" style="--fill:75%"><div class="trailer" aria-hidden="true"><i></i></div><h3 data-i18n="3_4_trailer">3/4 Trailer</h3><p data-i18n="large_cleanout">Large cleanout</p><span class="price" data-bind="price-three">Free quote</span></li>
+      <li class="load glass reveal" style="--fill:100%"><div class="trailer" aria-hidden="true"><i></i></div><h3 data-i18n="full_trailer_5x10">Full Trailer (5x10)</h3><p data-i18n="whole_property_cleanout">Whole-property cleanout</p><span class="price" data-bind="price-full">Free quote</span></li>
     </ul>
-    <p class="price-note reveal">Light loads land at the low end; heavy or hard-to-reach loads at the high end. We confirm your exact price before we load. No hidden fees.</p>
+    <p class="price-note reveal" data-i18n="light_loads_land_at_the_low_end_heavy_">Light loads land at the low end; heavy or hard-to-reach loads at the high end. We confirm your exact price before we load. No hidden fees.</p>
     <div class="addons glass reveal">
-      <h3>Add-ons</h3>
+      <h3 data-i18n="add_ons">Add-ons</h3>
       <ul id="addons-list" class="addons-list"></ul>
-      <p class="note">Furniture and couches are included in load pricing.</p>
+      <p class="note" data-i18n="furniture_and_couches_are_included_in_">Furniture and couches are included in load pricing.</p>
     </div>
-    <p class="center reveal"><a class="btn btn-primary" href="#quote">Send photos for your quote</a></p>
+    <p class="center reveal"><a class="btn btn-primary" href="#quote" data-i18n="send_photos_for_your_quote">Send photos for your quote</a></p>
   </div>
 </section>
 
@@ -182,54 +185,54 @@
 <section id="estimator" class="section" aria-labelledby="est-title">
   <div class="wrap">
     <header class="section-head reveal">
-      <p class="kicker">Load estimator</p>
-      <h2 id="est-title">Build <span class="neon">Your Load</span></h2>
-      <p class="sub">Tap items to load them onto our 5x10 trailer and watch the price update. It's a fun way to see what your junk adds up to.</p>
+      <p class="kicker" data-i18n="load_estimator">Load estimator</p>
+      <h2 id="est-title" data-i18n="build_your_load">Build <span class="neon">Your Load</span></h2>
+      <p class="sub" data-i18n="tap_items_to_load_them_onto_our_5x10_t">Tap items to load them onto our 5x10 trailer and watch the price update. It's a fun way to see what your junk adds up to.</p>
     </header>
 
     <div class="est" id="est" data-state="idle">
       <div class="est-stage glass" id="est-stage">
-        <canvas id="est-canvas" tabindex="0" role="img" aria-label="3D view of a 5 by 10 foot utility trailer holding your selected items. Drag to rotate, scroll or pinch to zoom. Arrow keys rotate, plus and minus zoom."></canvas>
-        <div class="est-loading" id="est-loading" role="status">Loading 3D trailer&hellip;</div>
-        <div class="est-views" role="group" aria-label="Camera views">
-          <button type="button" class="chip-btn" data-view="side">Side</button>
-          <button type="button" class="chip-btn" data-view="top">Top</button>
-          <button type="button" class="chip-btn" data-view="back">Back</button>
+        <canvas id="est-canvas" tabindex="0" role="img" data-i18n-attr="aria-label:aria_canvas" aria-label="3D view of a 5 by 10 foot utility trailer holding your selected items. Drag to rotate, scroll or pinch to zoom. Arrow keys rotate, plus and minus zoom."></canvas>
+        <div class="est-loading" id="est-loading" role="status" data-i18n="loading_3d_trailer">Loading 3D trailer&hellip;</div>
+        <div class="est-views" role="group" aria-label="Camera views" data-i18n-attr="aria-label:aria_camera_views">
+          <button type="button" class="chip-btn" data-view="side" data-i18n="side">Side</button>
+          <button type="button" class="chip-btn" data-view="top" data-i18n="top">Top</button>
+          <button type="button" class="chip-btn" data-view="back" data-i18n="back">Back</button>
         </div>
         <div class="est-toast" id="est-toast" role="status" aria-live="polite"></div>
       </div>
 
       <div class="est-panel glass">
-        <div class="meter-head"><span class="meter-label">Trailer fill</span><span class="meter-tier" id="est-tier">Empty</span></div>
-        <div class="meter" id="est-meter" role="progressbar" aria-label="Trailer fill" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="meter-head"><span class="meter-label" data-i18n="trailer_fill">Trailer fill</span><span class="meter-tier" id="est-tier">Empty</span></div>
+        <div class="meter" id="est-meter" role="progressbar" aria-label="Trailer fill" data-i18n-attr="aria-label:aria_trailer_fill" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
           <div class="meter-fill" id="est-fill"></div>
           <i style="left:25%"></i><i style="left:50%"></i><i style="left:75%"></i>
         </div>
-        <div class="meter-scale" aria-hidden="true"><span>Single</span><span>1/4</span><span>1/2</span><span>3/4</span><span>Full</span></div>
+        <div class="meter-scale" aria-hidden="true"><span data-i18n="single">Single</span><span>1/4</span><span>1/2</span><span>3/4</span><span data-i18n="full">Full</span></div>
         <div class="meter meter2" id="est-meter2" hidden aria-hidden="true"><div class="meter-fill" id="est-fill2"></div></div>
-        <p class="over" id="est-over" hidden>More than one trailer, we'll make extra trips.</p>
+        <p class="over" id="est-over" hidden data-i18n="more_than_one_trailer_we_ll_make_extra">More than one trailer, we'll make extra trips.</p>
 
         <div class="est-price">
-          <span class="est-price-label">Estimated:</span>
+          <span class="est-price-label" data-i18n="estimated">Estimated:</span>
           <span class="est-price-num" id="est-price" aria-hidden="true">&mdash;</span>
         </div>
         <p class="sr-only" id="est-live" aria-live="polite"></p>
         <p class="est-summary" id="est-summary">Your trailer is empty. Add an item to get started.</p>
 
-        <a class="btn btn-primary btn-xl" id="est-text" href="sms:"><svg class="ico"><use href="#i-msg"/></svg><span>Text me this quote</span></a>
-        <a class="btn btn-ghost btn-block" id="est-call" href="tel:"><svg class="ico"><use href="#i-phone"/></svg><span>Call us</span></a>
-        <p class="note est-disc">Estimate only. Final price confirmed on-site before we load.</p>
+        <a class="btn btn-primary btn-xl" id="est-text" href="sms:"><svg class="ico"><use href="#i-msg"/></svg><span data-i18n="text_me_this_quote">Text me this quote</span></a>
+        <a class="btn btn-ghost btn-block" id="est-call" href="tel:"><svg class="ico"><use href="#i-phone"/></svg><span data-i18n="call_us">Call us</span></a>
+        <p class="note est-disc" data-i18n="estimate_only_final_price_confirmed_on">Estimate only. Final price confirmed on-site before we load.</p>
       </div>
     </div>
 
     <div class="est-tools">
-      <button type="button" class="btn btn-ghost" id="est-surprise"><svg class="ico"><use href="#i-spark"/></svg><span>Surprise me</span></button>
-      <button type="button" class="btn btn-ghost" id="est-clear"><svg class="ico"><use href="#i-trash"/></svg><span>Clear trailer</span></button>
+      <button type="button" class="btn btn-ghost" id="est-surprise"><svg class="ico"><use href="#i-spark"/></svg><span data-i18n="surprise_me">Surprise me</span></button>
+      <button type="button" class="btn btn-ghost" id="est-clear"><svg class="ico"><use href="#i-trash"/></svg><span data-i18n="clear_trailer">Clear trailer</span></button>
       <button type="button" class="btn btn-ghost" id="est-sound" aria-pressed="false" aria-label="Sound effects off"><svg class="ico"><use href="#i-sound-off"/></svg><span>Sound off</span></button>
     </div>
 
-    <div class="picker" id="est-picker" role="group" aria-label="Items to add to the trailer" tabindex="-1"></div>
-    <p class="note center picker-hint">Tap an item to drop it in. Tap an item inside the trailer to remove it.</p>
+    <div class="picker" id="est-picker" role="group" aria-label="Items to add to the trailer" tabindex="-1" data-i18n-attr="aria-label:aria_items_picker"></div>
+    <p class="note center picker-hint" data-i18n="tap_an_item_to_drop_it_in_tap_an_item_">Tap an item to drop it in. Tap an item inside the trailer to remove it.</p>
   </div>
 </section>
 
@@ -237,13 +240,13 @@
 <section id="how" class="section" aria-labelledby="how-title">
   <div class="wrap">
     <header class="section-head reveal">
-      <p class="kicker">How it works</p>
-      <h2 id="how-title">Three steps. <span class="neon">Zero hassle.</span></h2>
+      <p class="kicker" data-i18n="how_it_works">How it works</p>
+      <h2 id="how-title" data-i18n="three_steps_zero_hassle">Three steps. <span class="neon">Zero hassle.</span></h2>
     </header>
     <ol class="steps">
-      <li class="step glass reveal"><span class="num">01</span><svg class="ico"><use href="#i-camera"/></svg><h3>Send photos</h3><p>Fill out the form or text us pictures of what needs to go.</p></li>
-      <li class="step glass reveal"><span class="num">02</span><svg class="ico"><use href="#i-calendar"/></svg><h3>Get your quote &amp; pick a time</h3><p>We send a free, upfront price and schedule a pickup that works for you.</p></li>
-      <li class="step glass reveal"><span class="num">03</span><svg class="ico"><use href="#i-truck"/></svg><h3>We haul it away</h3><p>We load everything and sweep up. You just point and smile.</p></li>
+      <li class="step glass reveal"><span class="num">01</span><svg class="ico"><use href="#i-camera"/></svg><h3 data-i18n="send_photos">Send photos</h3><p data-i18n="fill_out_the_form_or_text_us_pictures_">Fill out the form or text us pictures of what needs to go.</p></li>
+      <li class="step glass reveal"><span class="num">02</span><svg class="ico"><use href="#i-calendar"/></svg><h3 data-i18n="get_your_quote_pick_a_time">Get your quote &amp; pick a time</h3><p data-i18n="we_send_a_free_upfront_price_and_sched">We send a free, upfront price and schedule a pickup that works for you.</p></li>
+      <li class="step glass reveal"><span class="num">03</span><svg class="ico"><use href="#i-truck"/></svg><h3 data-i18n="we_haul_it_away">We haul it away</h3><p data-i18n="we_load_everything_and_sweep_up_you_ju">We load everything and sweep up. You just point and smile.</p></li>
     </ol>
   </div>
 </section>
@@ -252,28 +255,28 @@
 <section id="quote" class="section alt" aria-labelledby="quote-title">
   <div class="wrap narrow">
     <header class="section-head reveal">
-      <p class="kicker">Free quote</p>
-      <h2 id="quote-title">Get your <span class="neon">free quote</span></h2>
-      <p class="sub">Photos help us estimate your load before we show up. Prefer texting? <a href="sms:" data-bind-sms>Text us your pictures</a>.</p>
+      <p class="kicker" data-i18n="free_quote_2">Free quote</p>
+      <h2 id="quote-title" data-i18n="get_your_free_quote">Get your <span class="neon">free quote</span></h2>
+      <p class="sub" data-i18n="photos_help_us_estimate_your_load_befo">Photos help us estimate your load before we show up. Prefer texting? <a href="sms:" data-bind-sms>Text us your pictures</a>.</p>
     </header>
     <form id="quote-form" class="glass form reveal" method="post" enctype="multipart/form-data" action="" novalidate>
-      <div class="field"><label for="f-name">Name <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" required><p class="err" id="e-name" role="alert"></p></div>
-      <div class="field"><label for="f-phone">Phone number <span class="req" aria-hidden="true">*</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required><p class="err" id="e-phone" role="alert"></p></div>
-      <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"><p class="err" id="e-email" role="alert"></p></div>
-      <div class="field"><label for="f-addr">Address / ZIP <span class="req" aria-hidden="true">*</span></label><input id="f-addr" name="address" type="text" autocomplete="street-address" required><p class="err" id="e-addr" role="alert"></p></div>
-      <div class="field full"><label for="f-what">What needs to be removed? <span class="req" aria-hidden="true">*</span></label><textarea id="f-what" name="details" rows="4" required></textarea><p class="err" id="e-what" role="alert"></p></div>
-      <div class="field"><label for="f-date">Preferred pickup date</label><input id="f-date" name="preferred_date" type="date"></div>
-      <div class="field"><label for="f-time">Preferred time</label>
-        <select id="f-time" name="preferred_time"><option value="">No preference</option><option>Morning</option><option>Midday</option><option>Afternoon</option><option>Evening</option></select></div>
+      <div class="field"><label for="f-name"><span data-i18n="name">Name</span> <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" required><p class="err" id="e-name" role="alert"></p></div>
+      <div class="field"><label for="f-phone"><span data-i18n="phone_number">Phone number</span> <span class="req" aria-hidden="true">*</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required><p class="err" id="e-phone" role="alert"></p></div>
+      <div class="field"><label for="f-email" data-i18n="email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"><p class="err" id="e-email" role="alert"></p></div>
+      <div class="field"><label for="f-addr"><span data-i18n="address_zip">Address / ZIP</span> <span class="req" aria-hidden="true">*</span></label><input id="f-addr" name="address" type="text" autocomplete="street-address" required><p class="err" id="e-addr" role="alert"></p></div>
+      <div class="field full"><label for="f-what"><span data-i18n="what_needs_to_be_removed">What needs to be removed?</span> <span class="req" aria-hidden="true">*</span></label><textarea id="f-what" name="details" rows="4" required></textarea><p class="err" id="e-what" role="alert"></p></div>
+      <div class="field"><label for="f-date" data-i18n="preferred_pickup_date">Preferred pickup date</label><input id="f-date" name="preferred_date" type="date"></div>
+      <div class="field"><label for="f-time" data-i18n="preferred_time">Preferred time</label>
+        <select id="f-time" name="preferred_time"><option value="" data-i18n="no_preference">No preference</option><option data-i18n="morning">Morning</option><option data-i18n="midday">Midday</option><option data-i18n="afternoon">Afternoon</option><option data-i18n="evening">Evening</option></select></div>
       <div class="field full">
-        <label for="f-photos">Upload pictures</label>
-        <label class="drop" for="f-photos"><svg class="ico"><use href="#i-upload"/></svg><span>Tap to add photos <small>(up to 8 images, 10 MB each)</small></span></label>
+        <label for="f-photos" data-i18n="upload_pictures">Upload pictures</label>
+        <label class="drop" for="f-photos"><svg class="ico"><use href="#i-upload"/></svg><span><span data-i18n="tap_to_add_photos">Tap to add photos</span> <small data-i18n="up_to_8_images_10_mb_each">(up to 8 images, 10 MB each)</small></span></label>
         <input id="f-photos" class="sr-file" name="photos" type="file" accept="image/*" multiple>
         <ul id="previews" class="previews" aria-live="polite"></ul>
         <p class="err" id="e-photos" role="alert"></p>
       </div>
       <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <div class="full"><button class="btn btn-primary btn-block" type="submit"><span class="btn-label">Get My Free Quote</span></button></div>
+      <div class="full"><button class="btn btn-primary btn-block" type="submit"><span class="btn-label" data-i18n="get_my_free_quote">Get My Free Quote</span></button></div>
       <p id="form-status" class="status full" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -283,18 +286,39 @@
 <section id="area" class="section" aria-labelledby="area-title">
   <div class="wrap">
     <header class="section-head reveal">
-      <p class="kicker">Service area</p>
-      <h2 id="area-title">Proudly serving <span class="neon">your neighborhood</span></h2>
+      <p class="kicker" data-i18n="service_area">Service area</p>
+      <h2 id="area-title" data-i18n="proudly_serving_your_neighborhood">Proudly serving <span class="neon">your neighborhood</span></h2>
+      <p class="sub" data-i18n="katy_fulshear_richmond_rosenberg_sugar">Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire, Sealy, Cypress &amp; surrounding areas (within 35 miles of Fulshear)</p>
     </header>
     <!-- Only list areas you are actually willing to service -->
     <ul class="areas">
       <li class="glass reveal"><svg class="ico"><use href="#i-pin"/></svg>Katy</li>
       <li class="glass reveal"><svg class="ico"><use href="#i-pin"/></svg>Fulshear</li>
       <li class="glass reveal"><svg class="ico"><use href="#i-pin"/></svg>Richmond</li>
+      <li class="glass reveal"><svg class="ico"><use href="#i-pin"/></svg>Rosenberg</li>
+      <li class="glass reveal"><svg class="ico"><use href="#i-pin"/></svg>Sugar Land</li>
       <li class="glass reveal"><svg class="ico"><use href="#i-pin"/></svg>Brookshire</li>
-      <li class="glass reveal"><svg class="ico"><use href="#i-pin"/></svg>Surrounding areas</li>
+      <li class="glass reveal"><svg class="ico"><use href="#i-pin"/></svg>Sealy</li>
+      <li class="glass reveal"><svg class="ico"><use href="#i-pin"/></svg>Cypress</li>
     </ul>
-    <p class="center note reveal">Not sure if we cover you? <a href="#contact">Ask us</a> &mdash; we'll tell you straight.</p>
+
+    <div class="map-wrap glass reveal" id="map-wrap">
+      <div id="svc-map" class="svc-map" role="region" aria-label="Map of our 35-mile service area around Fulshear" data-i18n-attr="aria-label:aria_map"></div>
+      <div class="map-loading" id="map-loading" role="status" data-i18n="loading_map">Loading map&hellip;</div>
+      <p class="map-hint" id="map-hint" hidden></p>
+      <div class="map-fallback" id="map-fallback" hidden>
+        <h3 data-i18n="cities_we_serve">Cities we serve</h3>
+        <ul class="city-list" id="city-list"></ul>
+      </div>
+    </div>
+
+    <div class="farther reveal">
+      <p class="farther-text" data-i18n="farther_away_call_or_text_us_and_we_ll">Farther away? Call or text us and we'll see what we can do!</p>
+      <div class="cta-row cta-center">
+        <a class="btn btn-ghost" href="tel:" data-bind-tel><svg class="ico"><use href="#i-phone"/></svg><span data-i18n="call_us">Call us</span></a>
+        <a class="btn btn-primary" href="sms:" data-bind-sms><svg class="ico"><use href="#i-msg"/></svg><span data-i18n="text_us">Text us</span></a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -302,14 +326,14 @@
 <section id="reviews" class="section alt" aria-labelledby="reviews-title" hidden>
   <div class="wrap">
     <header class="section-head reveal">
-      <p class="kicker">Reviews</p>
-      <h2 id="reviews-title">What customers <span class="neon">say</span></h2>
-      <p class="sub">Real reviews from real customers will appear here.</p>
+      <p class="kicker" data-i18n="reviews">Reviews</p>
+      <h2 id="reviews-title" data-i18n="what_customers_say">What customers <span class="neon">say</span></h2>
+      <p class="sub" data-i18n="real_reviews_from_real_customers_will_">Real reviews from real customers will appear here.</p>
     </header>
     <ul class="cards cols-3">
-      <li class="card glass review reveal"><div class="stars" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p class="placeholder-text">Customer review placeholder &mdash; replace with a real review.</p><span class="who">&mdash; Customer name, City</span></li>
-      <li class="card glass review reveal"><div class="stars" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p class="placeholder-text">Customer review placeholder &mdash; replace with a real review.</p><span class="who">&mdash; Customer name, City</span></li>
-      <li class="card glass review reveal"><div class="stars" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p class="placeholder-text">Customer review placeholder &mdash; replace with a real review.</p><span class="who">&mdash; Customer name, City</span></li>
+      <li class="card glass review reveal"><div class="stars" aria-label="5 out of 5 stars" data-i18n-attr="aria-label:aria_five_stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p class="placeholder-text" data-i18n="customer_review_placeholder_replace_wi">Customer review placeholder &mdash; replace with a real review.</p><span class="who" data-i18n="customer_name_city">&mdash; Customer name, City</span></li>
+      <li class="card glass review reveal"><div class="stars" aria-label="5 out of 5 stars" data-i18n-attr="aria-label:aria_five_stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p class="placeholder-text" data-i18n="customer_review_placeholder_replace_wi">Customer review placeholder &mdash; replace with a real review.</p><span class="who" data-i18n="customer_name_city">&mdash; Customer name, City</span></li>
+      <li class="card glass review reveal"><div class="stars" aria-label="5 out of 5 stars" data-i18n-attr="aria-label:aria_five_stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div><p class="placeholder-text" data-i18n="customer_review_placeholder_replace_wi">Customer review placeholder &mdash; replace with a real review.</p><span class="who" data-i18n="customer_name_city">&mdash; Customer name, City</span></li>
     </ul>
   </div>
 </section>
@@ -318,16 +342,16 @@
 <section id="gallery" class="section" aria-labelledby="gallery-title">
   <div class="wrap">
     <header class="section-head reveal">
-      <p class="kicker">Our work</p>
-      <h2 id="gallery-title">See what we <span class="neon">haul</span></h2>
+      <p class="kicker" data-i18n="our_work">Our work</p>
+      <h2 id="gallery-title" data-i18n="see_what_we_haul">See what we <span class="neon">haul</span></h2>
     </header>
     <figure class="gallery-set">
       <ul class="gallery">
-        <li class="reveal"><img class="shot" src="assets/photos/job-1.jpg" width="1200" height="1600" loading="lazy" alt="Wooden pallets, a filing cabinet and trash bags beside a dumpster at an office building"></li>
-        <li class="reveal"><img class="shot" src="assets/photos/job-2.jpg" width="1200" height="1600" loading="lazy" alt="Truck cab loaded with boxes from the office cleanout"></li>
-        <li class="reveal"><img class="shot" src="assets/photos/job-3.jpg" width="1200" height="1600" loading="lazy" alt="Boxes and a black cabinet loaded in the truck after the office cleanout"></li>
+        <li class="reveal"><img class="shot" src="assets/photos/job-1.jpg" width="1200" height="1600" loading="lazy" alt="Wooden pallets, a filing cabinet and trash bags beside a dumpster at an office building" data-i18n-attr="alt:alt_gallery_1"></li>
+        <li class="reveal"><img class="shot" src="assets/photos/job-2.jpg" width="1200" height="1600" loading="lazy" alt="Truck cab loaded with boxes from the office cleanout" data-i18n-attr="alt:alt_gallery_2"></li>
+        <li class="reveal"><img class="shot" src="assets/photos/job-3.jpg" width="1200" height="1600" loading="lazy" alt="Boxes and a black cabinet loaded in the truck after the office cleanout" data-i18n-attr="alt:alt_gallery_3"></li>
       </ul>
-      <figcaption class="reveal">Our first job: office cleanout</figcaption>
+      <figcaption class="reveal" data-i18n="our_first_job_office_cleanout">Our first job: office cleanout</figcaption>
     </figure>
   </div>
 </section>
@@ -336,10 +360,10 @@
 <section id="about" class="section alt" aria-labelledby="about-title">
   <div class="wrap about">
     <div class="reveal">
-      <p class="kicker">About Haul Bros</p>
-      <h2 id="about-title">Local. Reliable. <span class="neon">Simple.</span></h2>
-      <p class="lead">Haul Bros is owned and run by two teen brothers. We are a local junk removal business serving Katy, Fulshear, Richmond, Brookshire and surrounding areas. We're focused on providing fast, affordable and reliable junk removal without the hassle.</p>
-      <a class="btn btn-primary" href="#quote">Get a Free Quote</a>
+      <p class="kicker" data-i18n="about_haul_bros">About Haul Bros</p>
+      <h2 id="about-title" data-i18n="local_reliable_simple">Local. Reliable. <span class="neon">Simple.</span></h2>
+      <p class="lead" data-i18n="haul_bros_is_owned_and_run_by_two_teen">Haul Bros is owned and run by two teen brothers. We are a local junk removal business serving Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire, Sealy, Cypress &amp; surrounding areas (within 35 miles of Fulshear). We're focused on providing fast, affordable and reliable junk removal without the hassle.</p>
+      <a class="btn btn-primary" href="#quote" data-i18n="get_a_free_quote">Get a Free Quote</a>
     </div>
     <figure class="glass reveal about-logo">
       <img src="assets/haulbros_logo_wide.png" width="660" height="580" loading="lazy" alt="Haul Bros logo">
@@ -351,24 +375,25 @@
 <section id="contact" class="section" aria-labelledby="contact-title">
   <div class="wrap">
     <header class="section-head reveal">
-      <p class="kicker">Contact</p>
-      <h2 id="contact-title">Text us a <span class="neon">photo</span></h2>
-      <p class="sub">The fastest way to a quote: snap a picture and text it to us.</p>
+      <p class="kicker" data-i18n="contact">Contact</p>
+      <h2 id="contact-title" data-i18n="text_us_a_photo">Text us a <span class="neon">photo</span></h2>
+      <p class="sub" data-i18n="the_fastest_way_to_a_quote_snap_a_pict">The fastest way to a quote: snap a picture and text it to us.</p>
     </header>
     <ul class="cards cols-4 contact-cards">
-      <li class="glass card reveal"><svg class="ico"><use href="#i-phone"/></svg><h3>Call</h3><a href="tel:" data-bind-tel><span data-bind="phone">[PHONE]</span></a></li>
-      <li class="glass card reveal"><svg class="ico"><use href="#i-msg"/></svg><h3>Text</h3><a href="sms:" data-bind-sms><span data-bind="phone">[PHONE]</span></a></li>
-      <li class="glass card reveal"><svg class="ico"><use href="#i-mail"/></svg><h3>Email</h3><a href="mailto:" data-bind-mail><span data-bind="email">[EMAIL]</span></a></li>
-      <li class="glass card reveal"><svg class="ico"><use href="#i-clock"/></svg><h3>Hours</h3><span data-bind="hours">[BUSINESS HOURS]</span></li>
+      <li class="glass card reveal"><svg class="ico"><use href="#i-phone"/></svg><h3 data-i18n="call">Call</h3><a href="tel:" data-bind-tel><span data-bind="phone">[PHONE]</span></a></li>
+      <li class="glass card reveal"><svg class="ico"><use href="#i-msg"/></svg><h3 data-i18n="text">Text</h3><a href="sms:" data-bind-sms><span data-bind="phone">[PHONE]</span></a></li>
+      <li class="glass card reveal"><svg class="ico"><use href="#i-mail"/></svg><h3 data-i18n="email">Email</h3><a href="mailto:" data-bind-mail><span data-bind="email">[EMAIL]</span></a></li>
+      <li class="glass card reveal"><svg class="ico"><use href="#i-clock"/></svg><h3 data-i18n="hours">Hours</h3><span data-bind="hours">[BUSINESS HOURS]</span></li>
     </ul>
     <div class="contact-foot reveal">
-      <p><svg class="ico"><use href="#i-pin"/></svg> Serving Katy, Fulshear, Richmond, Brookshire &amp; surrounding areas</p>
-      <ul class="social" aria-label="Social media">
-        <li><a class="soc" href="#" data-bind-href="instagram" aria-label="Haul Bros on Instagram"><svg class="ico"><use href="#i-insta"/></svg></a></li>
-        <li><a class="soc" href="#" data-bind-href="facebook" aria-label="Haul Bros on Facebook"><svg class="ico"><use href="#i-fb"/></svg></a></li>
-        <li><a class="soc" href="#" data-bind-href="tiktok" aria-label="Haul Bros on TikTok"><svg class="ico"><use href="#i-tiktok"/></svg></a></li>
+      <p class="badge-es" translate="no"><svg class="ico"><use href="#i-msg"/></svg><span lang="es">¡Se Habla Español!</span></p>
+      <p><svg class="ico"><use href="#i-pin"/></svg> <span data-i18n="serving_katy_fulshear_richmond_rosenbe">Serving Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire, Sealy, Cypress &amp; surrounding areas (within 35 miles of Fulshear)</span></p>
+      <ul class="social" aria-label="Social media" data-i18n-attr="aria-label:aria_social">
+        <li><a class="soc" href="#" data-bind-href="instagram" aria-label="Haul Bros on Instagram" data-i18n-attr="aria-label:aria_instagram"><svg class="ico"><use href="#i-insta"/></svg></a></li>
+        <li><a class="soc" href="#" data-bind-href="facebook" aria-label="Haul Bros on Facebook" data-i18n-attr="aria-label:aria_facebook"><svg class="ico"><use href="#i-fb"/></svg></a></li>
+        <li><a class="soc" href="#" data-bind-href="tiktok" aria-label="Haul Bros on TikTok" data-i18n-attr="aria-label:aria_tiktok"><svg class="ico"><use href="#i-tiktok"/></svg></a></li>
       </ul>
-      <a class="btn btn-primary" href="#quote">Get a Free Quote</a>
+      <a class="btn btn-primary" href="#quote" data-i18n="get_a_free_quote">Get a Free Quote</a>
     </div>
   </div>
 </section>
@@ -376,22 +401,25 @@
 
 <footer class="site-footer">
   <div class="wrap foot">
-    <a class="brand" href="#top" aria-label="Haul Bros, back to top"><img src="assets/haulbros_profile_96.png" width="36" height="36" alt="Haul Bros logo"><span class="brand-name">HAUL <b>BROS</b></span></a>
-    <p>Junk removal in Katy, Fulshear, Richmond, Brookshire &amp; surrounding areas.</p>
+    <a class="brand" href="#top" aria-label="Haul Bros, back to top" data-i18n-attr="aria-label:aria_brand_top"><img src="assets/haulbros_profile_96.png" width="36" height="36" alt="Haul Bros logo"><span class="brand-name">HAUL <b>BROS</b></span></a>
+    <p data-i18n="junk_removal_in_katy_fulshear_richmond">Junk removal in Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire, Sealy, Cypress &amp; surrounding areas (within 35 miles of Fulshear).</p>
+    <p class="badge-es" translate="no"><svg class="ico"><use href="#i-msg"/></svg><span lang="es">¡Se Habla Español!</span></p>
     <p><a href="tel:" data-bind-tel><span data-bind="phone">[PHONE]</span></a> &middot; <a href="mailto:" data-bind-mail><span data-bind="email">[EMAIL]</span></a></p>
     <p class="copy">&copy; <span id="year">2026</span> Haul Bros. All rights reserved.</p>
   </div>
 </footer>
 
 <!-- Mobile sticky action bar -->
-<nav class="mobile-bar" aria-label="Quick actions">
-  <a href="tel:" data-bind-tel><svg class="ico"><use href="#i-phone"/></svg>Call</a>
-  <a href="sms:" data-bind-sms><svg class="ico"><use href="#i-msg"/></svg>Text</a>
-  <a class="hl" href="#quote">Free Quote</a>
+<nav class="mobile-bar" aria-label="Quick actions" data-i18n-attr="aria-label:aria_quick_actions">
+  <a href="tel:" data-bind-tel><svg class="ico"><use href="#i-phone"/></svg><span data-i18n="call">Call</span></a>
+  <a href="sms:" data-bind-sms><svg class="ico"><use href="#i-msg"/></svg><span data-i18n="text">Text</span></a>
+  <a class="hl" href="#quote" data-i18n="bar_free_quote">Free Quote</a>
 </nav>
 
 <script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 <script src="js/estimator.js" defer></script>
+<script src="js/map.js" defer></script>
 </body>
 </html>
