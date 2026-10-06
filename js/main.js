@@ -29,6 +29,15 @@
       var v = S.prices && S.prices[k], e = $('[data-bind="' + pk[k] + '"]');
       if (v && e) e.textContent = money(v);
     });
+    var sl = $('#single-list');
+    if (sl && S.singleList) {
+      sl.innerHTML = '';
+      S.singleList.forEach(function (a, i) {
+        var li = d.createElement('li'), l = d.createElement('span'), p = d.createElement('b');
+        l.textContent = T('single_' + i + '_label', null, a.label); p.textContent = a.price;
+        li.appendChild(l); li.appendChild(p); sl.appendChild(li);
+      });
+    }
     if (al && S.addons) {
       al.innerHTML = '';
       S.addons.forEach(function (a, i) {

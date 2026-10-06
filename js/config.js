@@ -22,12 +22,30 @@ window.SITE = {
     full:    [425, 500]
   },
 
-  /* Add-ons shown under the pricing cards (display text only).
+  /* Flat price when exactly ONE item is loaded: no add-on fee on top. Add-on fees below apply only to loads of
+     2 or more items. [low, high]; equal numbers show as one price. Items not listed use "default". */
+  singlePrices: {
+    mattress: [125, 125], boxspring: [125, 125],
+    washer: [125, 125], dryer: [125, 125], stove: [125, 125],
+    fridge: [150, 150],                     // freezer / AC too (refrigerant included)
+    tv: [125, 125],
+    default: [125, 150]                     // couch, chair, dresser, table, grill, tires, yard debris...
+  },
+  /* Single-item list shown on the page (display text only; keep in sync with singlePrices). */
+  singleList: [
+    { label: "Mattress or box spring", price: "$125" },
+    { label: "Washer, dryer or stove", price: "$125" },
+    { label: "Fridge, freezer or AC unit (refrigerant included)", price: "$150" },
+    { label: "TV", price: "$125" },
+    { label: "Any other single item (couch, chair, dresser, table, grill\u2026)", price: "$125 \u2013 $150" }
+  ],
+
+  /* Add-ons shown under the pricing cards (display text only; for loads of 2+ items).
      The estimator charges these via each item's `fee` below — keep the two in sync. */
   addons: [
     { label: "Mattress or box spring", price: "+$50 each" },
-    { label: "Appliance (washer, dryer, stove)", price: "+$75 each" },
-    { label: "Fridge, freezer or AC unit", price: "+$75 plus $50 refrigerant removal" },
+    { label: "Appliance (washer, dryer, stove)", price: "+$50 each" },
+    { label: "Fridge, freezer or AC unit (refrigerant removal included)", price: "+$75 each" },
     { label: "TVs and electronics", price: "+$25 each" },
     { label: "Tires", price: "+$15 each" },
     { label: "Concrete, dirt, shingles or heavy debris", price: "quoted on-site" }
@@ -79,16 +97,16 @@ window.SITE = {
     ],
     /* Item list. vol = approximate cubic feet of trailer space used (per placement).
        units = how many real items one tap adds (boxes and bags come in 5s).
-       fee = add-on dollars per placement (fridge = $75 + $50 refrigerant). */
+       fee = add-on dollars per placement, charged only when 2+ items are loaded (fridge $75 includes refrigerant). */
     items: [
       { id: "couch",    label: "Couch",          name: "Couch",       plural: "Couches",     units: 1, vol: 40 },
       { id: "recliner", label: "Recliner/Chair", name: "Chair",       plural: "Chairs",      units: 1, vol: 22 },
       { id: "mattress", label: "Mattress",       name: "Mattress",    plural: "Mattresses",  units: 1, vol: 28, fee: 50 },
       { id: "boxspring",label: "Box Spring",     name: "Box Spring",  plural: "Box Springs", units: 1, vol: 24, fee: 50 },
-      { id: "fridge",   label: "Fridge",         name: "Fridge",      plural: "Fridges",     units: 1, vol: 36, fee: 125 },
-      { id: "washer",   label: "Washer",         name: "Washer",      plural: "Washers",     units: 1, vol: 16, fee: 75 },
-      { id: "dryer",    label: "Dryer",          name: "Dryer",       plural: "Dryers",      units: 1, vol: 16, fee: 75 },
-      { id: "stove",    label: "Stove",          name: "Stove",       plural: "Stoves",      units: 1, vol: 16, fee: 75 },
+      { id: "fridge",   label: "Fridge",         name: "Fridge",      plural: "Fridges",     units: 1, vol: 36, fee: 75 },
+      { id: "washer",   label: "Washer",         name: "Washer",      plural: "Washers",     units: 1, vol: 16, fee: 50 },
+      { id: "dryer",    label: "Dryer",          name: "Dryer",       plural: "Dryers",      units: 1, vol: 16, fee: 50 },
+      { id: "stove",    label: "Stove",          name: "Stove",       plural: "Stoves",      units: 1, vol: 16, fee: 50 },
       { id: "dresser",  label: "Dresser",        name: "Dresser",     plural: "Dressers",    units: 1, vol: 24 },
       { id: "table",    label: "Table",          name: "Table",       plural: "Tables",      units: 1, vol: 20 },
       { id: "tv",       label: "TV",             name: "TV",          plural: "TVs",         units: 1, vol: 5,  fee: 25 },

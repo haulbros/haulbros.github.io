@@ -55,6 +55,11 @@
     for (var i = 1; i < E.tiers.length; i++) if (Math.abs(vol - E.tiers[i].fraction * FULL) < Math.abs(vol - best.fraction * FULL)) best = E.tiers[i];
     return best;
   }
+  /* Flat price for a lone item (config singlePrices[id], else singlePrices.default). */
+  function singleRange(id) {
+    var sp = S.singlePrices || {}, p = sp[id] || sp.default || S.prices.single;
+    return [p[0], p[1]];
+  }
   function totals() {
     var vol = 0, units = 0, fees = 0;
     state.items.forEach(function (p) { var it = defs[p.id]; vol += it.vol; units += it.units; fees += it.fee || 0; });
@@ -64,8 +69,10 @@
     var t = totals();
     if (!state.items.length) return null;
     var r, tier, trips = Math.ceil(t.vol / FULL), over = t.vol > FULL, about = true;
+    var single = state.items.length === 1 && t.units === 1;
+    if (single) t.fees = 0;                                 /* add-on fees only apply to loads of 2+ items */
     if (!over) {
-      if (t.units === 1) { r = range('single'); tier = E.tiers[0]; about = false; }   /* exactly one item = Single Item */
+      if (single) { r = singleRange(state.items[0].id); tier = E.tiers[0]; about = false; }   /* exactly one item = flat Single Item price */
       else { r = interp(t.vol); tier = nearestTier(t.vol, t.units); }
     } else {
       var fullTrips = Math.floor(t.vol / FULL), rem = t.vol - fullTrips * FULL, rf = range('full');
@@ -75,12 +82,12 @@
     }
     var floor = range('single')[0];
     var low = Math.max(floor, round5(r[0] + t.fees)), high = Math.max(low, round5(r[1] + t.fees));
-    return { vol: t.vol, units: t.units, fees: t.fees, tier: tier, about: about, trips: trips, over: over, low: low, high: high };
+    return { vol: t.vol, units: t.units, fees: t.fees, single: single, tier: tier, about: about, trips: trips, over: over, low: low, high: high };
   }
   /* "About 1/2 Trailer" for interpolated loads; plain label for Single Item. */
   function tierText(e) { var l = tierLabel(e.tier); return e.about ? X('tier_about', { tier: l }) : l; }
   function money(n) { return '$' + n; }
-  function rangeText(e) { return money(e.low) + ' – ' + money(e.high); }
+  function rangeText(e) { return e.low === e.high ? money(e.low) : money(e.low) + ' – ' + money(e.high); }
 
   function itemsText() {
     var counts = {}, out = [];
@@ -100,7 +107,7 @@
       var k = dur ? Math.min((now - t0) / dur, 1) : 1, e = 1 - Math.pow(1 - k, 3);
       disp.low = Math.round(from.low + (low - from.low) * e);
       disp.high = Math.round(from.high + (high - from.high) * e);
-      els.price.textContent = money(disp.low) + ' – ' + money(disp.high);
+      els.price.textContent = low === high ? money(disp.low) : money(disp.low) + ' – ' + money(disp.high);   /* flat price shows one number */
       if (k < 1) priceRaf = requestAnimationFrame(step);
     }
     priceRaf = requestAnimationFrame(step);
@@ -131,13 +138,14 @@
       : list + ' · ' + (over ? X('est_trailers', { n: e.trips }) : tierText(e)) + (e.fees ? ' · ' + X('est_includes_addons', { n: e.fees }) : '');
     clearTimeout(liveTimer);
     liveTimer = setTimeout(function () {
-      els.live.textContent = e ? X('est_live', { low: money(e.low), high: money(e.high) }) + ' ' + (over ? X('est_live_over') : tierText(e)) : X('est_live_empty');
+      els.live.textContent = e ? (e.low === e.high ? X('est_live_flat', { price: money(e.low) }) : X('est_live', { low: money(e.low), high: money(e.high) })) + ' ' + (over ? X('est_live_over') : tierText(e)) : X('est_live_empty');
     }, 500);
 
     /* text / call buttons */
     if (digits) {
-      var body = e ? X('sms_body', { items: list, tier: over ? X('sms_trailers', { n: e.trips }) : tierText(e), range: rangeText(e) })
-                   : X('sms_empty');
+      var body = !e ? X('sms_empty')
+               : e.single ? X('sms_single', { items: list, range: rangeText(e) })
+               : X(e.fees ? 'sms_body_fees' : 'sms_body', { items: list, tier: over ? X('sms_trailers', { n: e.trips }) : tierText(e), range: rangeText(e) });
       els.text.href = 'sms:+' + digits + '?&body=' + encodeURIComponent(body);
       els.call.href = 'tel:+' + digits;
     } else { els.text.removeAttribute('href'); els.call.removeAttribute('href'); }
