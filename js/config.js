@@ -13,7 +13,7 @@ window.SITE = {
 
   /* Load-size price ranges in dollars: [low, high]. Shown as "$X – $Y". */
   prices: {
-    single:  [80, 120],
+    single:  [70, 120],
     quarter: [150, 195],
     half:    [225, 275],
     three:   [295, 350],
@@ -22,7 +22,7 @@ window.SITE = {
 
   /* Single-item list shown on the page (display text only). */
   singleList: [
-    { label: "Most single items (mattress, TV, washer, dryer, stove, couch, chair\u2026)", price: "$80 \u2013 $120" },
+    { label: "Most single items (mattress, TV, washer, dryer, stove, couch, chair\u2026)", price: "$70 \u2013 $120" },
     { label: "Fridge, freezer or AC unit (refrigerant included)", price: "from $130" }
   ],
 

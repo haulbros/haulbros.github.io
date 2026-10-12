@@ -11,7 +11,7 @@ Static one-page site (plain HTML/CSS/JS, no build step). Deploy the folder as-is
 Design decisions follow the `ui-ux-pro-max` skill in `.claude/skills/`.
 
 ## Pricing
-- Load-size price ranges, add-ons and the single-item list are in `js/config.js` (display text; the lowest Single Item price is $80 to match the hero).
+- Load-size price ranges, add-ons and the single-item list are in `js/config.js` (display text; the lowest Single Item price is $70 to match the hero).
 
 ## Spanish (EN / ES)
 - All page text lives in `js/i18n.js` (`window.I18N.en` / `.es`). Static text in `index.html` carries `data-i18n="key"` (or `data-i18n-attr="aria-label:key"`); text built by scripts uses `t("key", {vars})`. Add new text to both languages.

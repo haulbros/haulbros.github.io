@@ -15,7 +15,7 @@ window.I18N = {
     "houston_junk_removal": "Houston Junk Removal",
     "fast_energetic_hauling_services": "Fast, energetic hauling services.",
     "hero_areas": "Fast junk removal in Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire &amp; surrounding areas. Same-day service available.",
-    "pricing_from_80": "Pricing from $80",
+    "pricing_from_70": "Pricing from $70",
     "schedule_a_pickup": "Schedule a Pickup",
     "about_us": "About Us",
     "what_we_take": "What we take",
@@ -129,7 +129,7 @@ window.I18N = {
     "addon_5_label": "Concrete, dirt, shingles or heavy debris",
     "addon_5_price": "quoted on-site",
     "meta_title": "Haul Bros | Houston Junk Removal",
-    "meta_description": "Fast junk removal in Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire and surrounding areas. Same-day service available. Pricing from $80.",
+    "meta_description": "Fast junk removal in Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire and surrounding areas. Same-day service available. Pricing from $70.",
     "special_launch_prices_for_our_first_cu": "Special launch prices for our first customers.",
     "bigger_jobs_custom_quote": "Bigger jobs: custom quote.",
     "aria_included": "Included with every job",
@@ -137,7 +137,7 @@ window.I18N = {
     "extra_sweep": "Sweep-up included",
     "extra_no_surcharge": "No fuel or travel surcharge",
     "extra_curbside": "$20 off curbside pickup",
-    "single_0_price": "$80 – $120",
+    "single_0_price": "$70 – $120",
     "single_1_price": "from $130"
   },
   es: {
@@ -151,7 +151,7 @@ window.I18N = {
     "houston_junk_removal": "Recolección de Basura en Houston",
     "fast_energetic_hauling_services": "Servicio de acarreo rápido y con energía.",
     "hero_areas": "Recolección rápida en Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire y alrededores. Servicio el mismo día disponible.",
-    "pricing_from_80": "Precios desde $80",
+    "pricing_from_70": "Precios desde $70",
     "schedule_a_pickup": "Programa una Recolección",
     "about_us": "Sobre Nosotros",
     "what_we_take": "Lo que nos llevamos",
@@ -265,7 +265,7 @@ window.I18N = {
     "addon_5_label": "Concreto, tierra, tejas o escombro pesado",
     "addon_5_price": "se cotiza en el lugar",
     "meta_title": "Haul Bros | Recolección de Basura en Houston",
-    "meta_description": "Recolección rápida de basura en Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire y alrededores. Servicio el mismo día disponible. Precios desde $80.",
+    "meta_description": "Recolección rápida de basura en Katy, Fulshear, Richmond, Rosenberg, Sugar Land, Brookshire y alrededores. Servicio el mismo día disponible. Precios desde $70.",
     "special_launch_prices_for_our_first_cu": "Precios especiales de lanzamiento para nuestros primeros clientes.",
     "bigger_jobs_custom_quote": "Trabajos más grandes: cotización personalizada.",
     "aria_included": "Incluido en cada trabajo",
@@ -273,7 +273,7 @@ window.I18N = {
     "extra_sweep": "Limpieza al terminar incluida",
     "extra_no_surcharge": "Sin cargo extra por gasolina ni distancia",
     "extra_curbside": "$20 de descuento si está en la banqueta",
-    "single_0_price": "$80 – $120",
+    "single_0_price": "$70 – $120",
     "single_1_price": "desde $130"
   }
 };
