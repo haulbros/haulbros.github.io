@@ -48,13 +48,10 @@
     }
   }
   bind();
-  if (S.showReviews) { var rv = $('#reviews'); if (rv) rv.hidden = false; }
   $('#year').textContent = new Date().getFullYear();
 
   /* ---- Header + nav ---- */
-  var header = $('.site-header'), toggle = $('.nav-toggle'), menu = $('#menu');
-  var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 12); };
-  onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+  var toggle = $('.nav-toggle'), menu = $('#menu');
   function setMenu(open) {
     menu.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', open);
@@ -66,7 +63,7 @@
   d.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setMenu(false); toggle.focus(); } });
 
   /* ---- Active nav link (scroll-spy) ---- */
-  var spyLinks = $$('.menu a[href^="#"]:not(.btn)');
+  var spyLinks = $$('.menu a[href^="#"]');
   function spy() {
     var cur = null, line = 120;
     spyLinks.forEach(function (a) {
@@ -82,25 +79,14 @@
   }
   spy(); window.addEventListener('scroll', spy, { passive: true });
 
-  /* ---- Scroll reveal (staggered within each group) ---- */
-  var items = $$('.reveal');
-  items.forEach(function (el) {
-    var sibs = $$('.reveal', el.parentElement), i = sibs.indexOf(el);
-    el.style.setProperty('--d', Math.min(i, 8) * 0.07 + 's');
-  });
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    items.forEach(function (el) { io.observe(el); });
-  } else items.forEach(function (el) { el.classList.add('in'); });
+  /* ---- Mobile Call/Text bar: shown once the hero (which has its own call + buttons) scrolls away ---- */
+  var heroEl = $('.hero');
+  if (heroEl && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { d.body.classList.toggle('past-hero', !es[0].isIntersecting); }, { threshold: 0.6 }).observe(heroEl);
+  } else d.body.classList.add('past-hero');
 
   /* ---- Quote form ---- */
   var form = $('#quote-form'), status = $('#form-status'), fileIn = $('#f-photos'), prev = $('#previews');
-  var dateIn = $('#f-date');
-  var t = new Date(); t.setMinutes(t.getMinutes() - t.getTimezoneOffset());
-  dateIn.min = t.toISOString().slice(0, 10);
-
   var MAX_FILES = 8, MAX_MB = 10;
   /* Error messages are stored as keys so they can be re-translated when the language changes. */
   function setErr(el, key, vars) {
@@ -139,7 +125,6 @@
     var bad = [
       check('f-name', 'e-name', 'err_name', function (v) { return v.length > 1; }),
       check('f-phone', 'e-phone', 'err_phone', function (v) { return v.replace(/\D/g, '').length >= 10; }),
-      check('f-email', 'e-email', 'err_email', function (v) { return !v || /^\S+@\S+\.\S+$/.test(v); }),
       check('f-addr', 'e-addr', 'err_addr', function (v) { return v.length > 2; }),
       check('f-what', 'e-what', 'err_what', function (v) { return v.length > 2; })
     ].filter(Boolean);

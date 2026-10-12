@@ -8,40 +8,28 @@ window.SITE = {
   instagram: "https://www.instagram.com/haulbros_/",
   facebook: "https://www.facebook.com/profile.php?id=61594964889182",
   tiktok: "",
-  /* Set to true once you have real customer reviews in the Reviews section of index.html */
-  showReviews: false,
   /* Quote form endpoint. Works with Formspree, Getform, Web3Forms, etc. */
   formEndpoint: "",     // e.g. "https://formspree.io/f/xxxxxxxx"
 
   /* Load-size price ranges in dollars: [low, high]. Shown as "$X – $Y". */
   prices: {
-    single:  [125, 150],
+    single:  [80, 150],
     quarter: [195, 250],
     half:    [275, 350],
     three:   [350, 425],
     full:    [425, 500]
   },
 
-  /* Flat price when exactly ONE item is loaded: no add-on fee on top. Add-on fees below apply only to loads of
-     2 or more items. [low, high]; equal numbers show as one price. Items not listed use "default". */
-  singlePrices: {
-    mattress: [125, 125], boxspring: [125, 125],
-    washer: [125, 125], dryer: [125, 125], stove: [125, 125],
-    fridge: [150, 150],                     // freezer / AC too (refrigerant included)
-    tv: [125, 125],
-    default: [125, 150]                     // couch, chair, dresser, table, grill, tires, yard debris...
-  },
-  /* Single-item list shown on the page (display text only; keep in sync with singlePrices). */
+  /* Single-item list shown on the page (display text only). */
   singleList: [
     { label: "Mattress or box spring", price: "$125" },
     { label: "Washer, dryer or stove", price: "$125" },
     { label: "Fridge, freezer or AC unit (refrigerant included)", price: "$150" },
     { label: "TV", price: "$125" },
-    { label: "Any other single item (couch, chair, dresser, table, grill\u2026)", price: "$125 \u2013 $150" }
+    { label: "Any other single item (couch, chair, dresser, table, grill\u2026)", price: "$80 \u2013 $150" }
   ],
 
-  /* Add-ons shown under the pricing cards (display text only; for loads of 2+ items).
-     The estimator charges these via each item's `fee` below — keep the two in sync. */
+  /* Add-ons shown under the pricing cards (display text only; for loads of 2+ items). */
   addons: [
     { label: "Mattress or box spring", price: "+$50 each" },
     { label: "Appliance (washer, dryer, stove)", price: "+$50 each" },
@@ -49,80 +37,5 @@ window.SITE = {
     { label: "TVs and electronics", price: "+$25 each" },
     { label: "Tires", price: "+$15 each" },
     { label: "Concrete, dirt, shingles or heavy debris", price: "quoted on-site" }
-  ],
-
-  /* ---------------- Service area map (Leaflet + OpenStreetMap) ---------------- */
-  serviceMap: {
-    /* Fulshear city center (approximate; not a street address). Edit to move the map and circle. */
-    center: { lat: 29.6895, lng: -95.8995 },
-    radiusMiles: 35,
-    /* Only cities inside the circle are drawn (checked in js/map.js). dir = label side; major cities keep their
-       label on small screens, the others show the label only on wide maps (tap the dot for the popup). */
-    cities: [
-      { name: "Fulshear",      lat: 29.6895, lng: -95.8995, dir: "bottom", major: true },
-      { name: "Katy",          lat: 29.7858, lng: -95.8245, dir: "right", major: true },
-      { name: "Cinco Ranch",   lat: 29.7378, lng: -95.7577, dir: "right" },
-      { name: "Simonton",      lat: 29.6955, lng: -95.9886, dir: "left" },
-      { name: "Brookshire",    lat: 29.7861, lng: -95.9502, dir: "top", major: true },
-      { name: "Richmond",      lat: 29.5822, lng: -95.7608, dir: "right", major: true },
-      { name: "Rosenberg",     lat: 29.5572, lng: -95.8085, dir: "bottom", major: true },
-      { name: "Sugar Land",    lat: 29.6197, lng: -95.6349, dir: "top", major: true },
-      { name: "Missouri City", lat: 29.6186, lng: -95.5377, dir: "right" },
-      { name: "Needville",     lat: 29.3944, lng: -95.8380, dir: "bottom" },
-      { name: "Wallis",        lat: 29.6330, lng: -96.0635, dir: "left" },
-      { name: "Sealy",         lat: 29.7808, lng: -96.1569, dir: "left", major: true },
-      { name: "Cypress",       lat: 29.9691, lng: -95.6970, dir: "right", major: true },
-      { name: "Waller",        lat: 30.0555, lng: -95.9279, dir: "top" },
-      { name: "Hempstead",     lat: 30.0974, lng: -96.0780, dir: "top" }
-    ]
-  },
-
-  /* ---------------- 3D load estimator ---------------- */
-  estimator: {
-    soundDefault: false,            // sound effects start OFF
-    trailer: { widthFt: 5, lengthFt: 10, usableLoadHeightFt: 4 },   // capacity = width x length x usableLoadHeightFt (5 x 10 x 4 = 200 cu ft = Full Trailer). Change the height after you measure.
-    maxTrailers: 2,                 // loads beyond this ask the customer to text us
-    maxPlacements: 60,              // performance cap on 3D objects
-    celebrateAtFraction: 0.95,      // confetti + "Trailer full!" once the load reaches this share of capacity
-    /* Pricing is interpolated between these anchors: each tier's price range sits at fraction x capacity
-       (1/4 = 50 cu ft, 1/2 = 100, 3/4 = 150, Full = 200 with the default 4 ft height). "single" is the anchor at
-       0 cu ft, so the estimate never drops below the Single Item minimum. A lone unit (1 item) is always priced
-       as Single Item. Displayed prices are rounded to the nearest $5. */
-    tiers: [
-      { key: "single",  label: "Single Item",         short: "Single",  fraction: 0 },
-      { key: "quarter", label: "1/4 Trailer",         short: "1/4",     fraction: 0.25 },
-      { key: "half",    label: "1/2 Trailer",         short: "1/2",     fraction: 0.5 },
-      { key: "three",   label: "3/4 Trailer",         short: "3/4",     fraction: 0.75 },
-      { key: "full",    label: "Full Trailer (5x10)", short: "Full",    fraction: 1 }
-    ],
-    /* Item list. vol = approximate cubic feet of trailer space used (per placement).
-       units = how many real items one tap adds (boxes and bags come in 5s).
-       fee = add-on dollars per placement, charged only when 2+ items are loaded (fridge $75 includes refrigerant). */
-    items: [
-      { id: "couch",    label: "Couch",          name: "Couch",       plural: "Couches",     units: 1, vol: 40 },
-      { id: "recliner", label: "Recliner/Chair", name: "Chair",       plural: "Chairs",      units: 1, vol: 22 },
-      { id: "mattress", label: "Mattress",       name: "Mattress",    plural: "Mattresses",  units: 1, vol: 28, fee: 50 },
-      { id: "boxspring",label: "Box Spring",     name: "Box Spring",  plural: "Box Springs", units: 1, vol: 24, fee: 50 },
-      { id: "fridge",   label: "Fridge",         name: "Fridge",      plural: "Fridges",     units: 1, vol: 36, fee: 75 },
-      { id: "washer",   label: "Washer",         name: "Washer",      plural: "Washers",     units: 1, vol: 16, fee: 50 },
-      { id: "dryer",    label: "Dryer",          name: "Dryer",       plural: "Dryers",      units: 1, vol: 16, fee: 50 },
-      { id: "stove",    label: "Stove",          name: "Stove",       plural: "Stoves",      units: 1, vol: 16, fee: 50 },
-      { id: "dresser",  label: "Dresser",        name: "Dresser",     plural: "Dressers",    units: 1, vol: 24 },
-      { id: "table",    label: "Table",          name: "Table",       plural: "Tables",      units: 1, vol: 20 },
-      { id: "tv",       label: "TV",             name: "TV",          plural: "TVs",         units: 1, vol: 5,  fee: 25 },
-      { id: "grill",    label: "Grill",          name: "Grill",       plural: "Grills",      units: 1, vol: 12 },
-      { id: "tires",    label: "Tires",          name: "Tire",        plural: "Tires",       units: 1, vol: 3,  fee: 15 },
-      { id: "boxes",    label: "Boxes (x5)",     name: "Box",         plural: "Boxes",       units: 5, vol: 15 },
-      { id: "bags",     label: "Trash Bags (x5)",name: "Trash Bag",   plural: "Trash Bags",  units: 5, vol: 15 },
-      { id: "yard",     label: "Yard Debris",    name: "Yard Debris Pile", plural: "Yard Debris Piles", units: 1, vol: 30 }
-    ],
-    /* "Surprise me" mixes: item id -> number of taps */
-    presets: [
-      { id: "garage", name: "Garage cleanout",  mix: { boxes: 3, bags: 1, table: 1, grill: 1, tires: 4, yard: 1 } },
-      { id: "bedroom", name: "Bedroom clear-out", mix: { mattress: 1, boxspring: 1, dresser: 1, tv: 1, boxes: 1 } },
-      { id: "living", name: "Living room redo", mix: { couch: 1, recliner: 1, tv: 1, table: 1 } },
-      { id: "appliance", name: "Appliance swap",   mix: { fridge: 1, washer: 1, dryer: 1, stove: 1 } },
-      { id: "yard", name: "Yard cleanup",     mix: { yard: 3, bags: 2, grill: 1 } }
-    ]
-  }
+  ]
 };
