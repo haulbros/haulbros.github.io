@@ -13,21 +13,19 @@ window.SITE = {
 
   /* Load-size price ranges in dollars: [low, high]. Shown as "$X – $Y". */
   prices: {
-    single:  [80, 150],
-    quarter: [195, 250],
-    half:    [275, 350],
-    three:   [350, 425],
-    full:    [425, 500]
+    single:  [80, 120],
+    quarter: [150, 195],
+    half:    [225, 275],
+    three:   [295, 350],
+    full:    [350, 425]
   },
 
   /* Single-item list shown on the page (display text only). */
   singleList: [
-    { label: "Mattress or box spring", price: "$125" },
-    { label: "Washer, dryer or stove", price: "$125" },
-    { label: "Fridge, freezer or AC unit (refrigerant included)", price: "$150" },
-    { label: "TV", price: "$125" },
-    { label: "Any other single item (couch, chair, dresser, table, grill\u2026)", price: "$80 \u2013 $150" }
+    { label: "Most single items (mattress, TV, washer, dryer, stove, couch, chair\u2026)", price: "$80 \u2013 $120" },
+    { label: "Fridge, freezer or AC unit (refrigerant included)", price: "from $130" }
   ],
+
 
   /* Add-ons shown under the pricing cards (display text only; for loads of 2+ items). */
   addons: [

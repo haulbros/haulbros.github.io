@@ -34,7 +34,7 @@
       sl.innerHTML = '';
       S.singleList.forEach(function (a, i) {
         var li = d.createElement('li'), l = d.createElement('span'), p = d.createElement('b');
-        l.textContent = T('single_' + i + '_label', null, a.label); p.textContent = a.price;
+        l.textContent = T('single_' + i + '_label', null, a.label); p.textContent = T('single_' + i + '_price', null, a.price);
         li.appendChild(l); li.appendChild(p); sl.appendChild(li);
       });
     }

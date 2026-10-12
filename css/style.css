@@ -116,7 +116,10 @@ ul,ol{list-style:none;margin:0;padding:0}
 .load h3{margin-bottom:6px}
 .load p{color:var(--muted);font-size:.9rem;line-height:1.45;margin-bottom:var(--s2);min-height:2.6em}
 .price{display:block;font:700 1.25rem var(--font-h);color:var(--text)}
+.launch{color:var(--red-text);font-weight:600;font-size:.95rem;margin:0 0 8px}
 .price-note{color:var(--muted);text-align:center;max-width:620px;margin:var(--s3) auto var(--s4);font-size:.95rem}
+.price-note.bigger{margin:calc(var(--s2) * -1) auto var(--s3);color:var(--text);font-weight:600}
+.extras{margin-bottom:var(--s4)}
 .two-col{display:grid;gap:var(--s3);grid-template-columns:1fr 1fr}
 .price-list li{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2);padding:10px 0;border-bottom:1px solid var(--border);font-size:.95rem}
 .price-list li:last-child{border-bottom:0}
