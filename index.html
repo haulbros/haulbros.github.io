@@ -182,8 +182,13 @@ section.dark .lede{color:#C5CACE}
 /* About */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .about .photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.about .photos img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px}
-.about .photos img:first-child{margin-top:40px}
+.about .photos .ph{margin:0;position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:var(--asphalt-2)}
+.about .photos .ph:first-child{margin-top:40px}
+.about .photos .ph img{width:100%;height:100%;object-fit:cover}
+.about .photos .ph figcaption{display:none}
+.about .photos .ph.empty{border:2px dashed rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;padding:20px;text-align:center}
+.about .photos .ph.empty img{display:none}
+.about .photos .ph.empty figcaption{display:block;color:#AEB4B9;font-weight:600;font-size:15px}
 .about p{font-size:18px;color:#D3D7DA;margin-top:16px;max-width:56ch}
 .about .sig{margin-top:22px;font:800 italic 28px/1 "Barlow Condensed",sans-serif;color:var(--white)}
 .about .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
@@ -477,9 +482,9 @@ footer .legal{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255
         </div>
       </div>
       <div class="photos">
-        <!-- FILL IN: swap in a photo of the two of you and one of the truck + trailer -->
-        <img src="assets/job-2.jpg" alt="Inside the truck cab loaded during our first job" loading="lazy">
-        <img src="assets/job-3.jpg" alt="Truck bed loaded with office junk" loading="lazy">
+        <!-- Photos: upload assets/team.jpg and assets/truck-trailer.jpg and they appear here automatically -->
+        <figure class="ph"><img src="assets/team.jpg" alt="Rodrigo and Diego, owners of Haul Bros" loading="lazy" onerror="this.parentNode.classList.add('empty')"><figcaption>Photo of Rodrigo &amp; Diego coming soon</figcaption></figure>
+        <figure class="ph"><img src="assets/truck-trailer.jpg" alt="The Haul Bros truck and 5x10 trailer" loading="lazy" onerror="this.parentNode.classList.add('empty')"><figcaption>Photo of our truck &amp; trailer coming soon</figcaption></figure>
       </div>
     </div>
     <div class="why">
