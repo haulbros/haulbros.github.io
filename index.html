@@ -81,6 +81,18 @@ h2{font-size:clamp(42px,6vw,76px)}
 @media (max-width:640px){.top .tel{display:none}.brand img{width:42px;height:42px}.brand span{font-size:26px}.top .btn-sm{padding:0 18px;font-size:18px}}
 .brand span,.btn{white-space:nowrap}
 
+/* meet + work */
+.meet{display:grid;grid-template-columns:minmax(0,400px) 1fr;gap:64px;align-items:center}
+.vid{position:relative;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);border:1px solid var(--line-d)}
+.vid video{width:100%;height:100%;object-fit:cover;display:block;background:#000}
+.meet p{font-size:19px;color:#B9C0C6;margin-top:20px;max-width:54ch}
+.meet .acts{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.work{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.work figure{margin:0;position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#000}
+.work img,.work video{width:100%;height:100%;object-fit:cover;display:block}
+.work figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;font:700 italic 20px/1.1 var(--disp);text-transform:uppercase;pointer-events:none}
+@media (max-width:900px){.meet{grid-template-columns:1fr;gap:40px}.vid{max-width:380px;margin:0 auto;width:100%}.work{grid-template-columns:1fr 1fr}}
+
 /* hero */
 .hero{position:relative;color:#fff;overflow:hidden;background:
   radial-gradient(900px 520px at 85% 30%,rgba(225,6,0,.22),transparent 60%),
@@ -334,6 +346,8 @@ footer .legal{margin-top:46px;padding-top:22px;border-top:1px solid var(--line-d
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Haul Bros home"><img src="assets/logo-192.png" alt=""><span>HAUL <b>BROS</b></span></a>
     <nav aria-label="Main">
+      <a href="#meet">Meet us</a>
+      <a href="#work">Our work</a>
       <a href="#haul">What we haul</a>
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
@@ -378,6 +392,22 @@ footer .legal{margin-top:46px;padding-top:22px;border-top:1px solid var(--line-d
     <div class="row"><span>Same-day pickups</span><svg><use href="#i-bolt"/></svg><span>Garage cleanouts</span><svg><use href="#i-bolt"/></svg><span>Furniture</span><svg><use href="#i-bolt"/></svg><span>Appliances</span><svg><use href="#i-bolt"/></svg><span>Mattresses</span><svg><use href="#i-bolt"/></svg><span>Yard waste</span><svg><use href="#i-bolt"/></svg><span>Move-outs</span><svg><use href="#i-bolt"/></svg><span>Se habla español</span><svg><use href="#i-bolt"/></svg></div>
   </div>
 </div>
+
+<!-- MEET US -->
+<section class="sec coal" id="meet">
+  <div class="wrap meet">
+    <div class="vid rv"><video src="assets/intro.mp4" poster="assets/intro-poster.jpg" controls playsinline preload="none" aria-label="Rodrigo and Diego introduce Haul Bros"></video></div>
+    <div class="rv">
+      <span class="kicker">Meet the bros</span>
+      <h2>Two locals. One trailer. Your junk gone.</h2>
+      <p>We're Rodrigo and Diego, the owners of Haul Bros. Tap play to hear who we are and why we started this. When you book with us, the two of us show up, do the lifting and leave your place clean.</p>
+      <div class="acts">
+        <a class="btn btn-red" href="#quote"><svg><use href="#i-chat"/></svg>Get a free quote</a>
+        <a class="btn btn-out" href="tel:+13462299942"><svg><use href="#i-phone"/></svg>Call us</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- QUOTE -->
 <section class="sec dark" id="quote">
@@ -485,6 +515,23 @@ footer .legal{margin-top:46px;padding-top:22px;border-top:1px solid var(--line-d
       </div>
     </div>
     <p class="nope rv"><b>What we can't take:</b> hazardous chemicals, wet paint and solvents, asbestos, medical waste, propane tanks and fuel. Not sure? Text us a photo.</p>
+  </div>
+</section>
+
+<!-- OUR WORK -->
+<section class="sec mist" id="work">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker">Our work</span>
+      <h2>Real jobs. Real loads.</h2>
+      <p class="lead">A few of the hauls we've done around Katy, Fulshear and Richmond. Have something like this? Text us a photo and we'll send you a price.</p>
+    </div>
+    <div class="work rv">
+      <figure><video src="assets/job-video.mp4" poster="assets/job-video-poster.jpg" controls playsinline preload="none" aria-label="Video walk-around of a full Haul Bros load"></video></figure>
+      <figure><img src="assets/job-4.jpg" alt="Loading a fridge, shelving and boxes into the Haul Bros trailer" loading="lazy"><figcaption>Appliances &amp; shelving</figcaption></figure>
+      <figure><img src="assets/job-2.jpg" alt="Boxes and office items loaded into the Haul Bros truck" loading="lazy"><figcaption>Office cleanout</figcaption></figure>
+      <figure><img src="assets/job-3.jpg" alt="A packed truck cab of boxes and a filing bin" loading="lazy"><figcaption>Packed and hauled</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -609,7 +656,7 @@ footer .legal{margin-top:46px;padding-top:22px;border-top:1px solid var(--line-d
       </div>
       <div>
         <h4>Explore</h4>
-        <ul><li><a href="#haul">What we haul</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#about">About us</a></li><li><a href="#quote">Free quote</a></li></ul>
+        <ul><li><a href="#haul">What we haul</a></li><li><a href="#work">Our work</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#about">About us</a></li><li><a href="#quote">Free quote</a></li></ul>
       </div>
     </div>
     <div class="legal"><span>© 2026 Haul Bros. Junk removal in Fulshear, Texas.</span><span>¡Hablamos español!</span></div>
