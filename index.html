@@ -347,10 +347,10 @@ footer .legal{margin-top:46px;padding-top:22px;border-top:1px solid var(--line-d
     <a class="brand" href="#top" aria-label="Haul Bros home"><img src="assets/logo-192.png" alt=""><span>HAUL <b>BROS</b></span></a>
     <nav aria-label="Main">
       <a href="#meet">Meet us</a>
-      <a href="#work">Our work</a>
       <a href="#haul">What we haul</a>
-      <a href="#how">How it works</a>
+      <a href="#work">Our work</a>
       <a href="#pricing">Pricing</a>
+      <a href="#how">How it works</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -409,81 +409,6 @@ footer .legal{margin-top:46px;padding-top:22px;border-top:1px solid var(--line-d
   </div>
 </section>
 
-<!-- QUOTE -->
-<section class="sec dark" id="quote">
-  <div class="wrap quote">
-    <div class="rv">
-      <span class="kicker">Free quote</span>
-      <h2>Send it. We'll price it.</h2>
-      <p class="lead">Takes a minute. Tell us what's going and add a few photos. We text you back with a price, usually within the hour.</p>
-      <ul>
-        <li>Your price before we lift anything</li>
-        <li>Same-day and next-day pickups</li>
-        <li>No fuel charges, no surprise fees</li>
-      </ul>
-      <div class="acts">
-        <a class="btn btn-red" href="tel:+13462299942"><svg><use href="#i-phone"/></svg>Call us</a>
-        <a class="btn btn-out" href="sms:+13462299942"><svg><use href="#i-chat"/></svg>Text photos</a>
-      </div>
-    </div>
-    <form class="form rv" id="qform" action="https://formsubmit.co/haulbroshauling@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
-      <input type="hidden" name="_subject" value="New Haul Bros pickup request">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://haulbros.github.io/?sent=1#quote">
-      <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <h3>Request a pickup</h3>
-      <p class="note">We'll text you back fast. Fields marked <b style="color:var(--red-ink)">*</b> are required.</p>
-      <div class="sent" id="sent" role="status">Got it! We'll text you back shortly with your price.</div>
-      <div class="grid">
-        <div><label for="f-name">Full name <b>*</b></label><input id="f-name" name="name" autocomplete="name" required><p class="err">Enter your name.</p></div>
-        <div><label for="f-phone">Phone <b>*</b></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required><p class="err">Enter a number we can text.</p></div>
-        <div class="full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="Optional"></div>
-        <div class="full"><label for="f-items">What needs to go? <b>*</b></label><textarea id="f-items" name="items" placeholder="Example: a couch, two mattresses and some boxes in the garage" required></textarea><p class="err">Tell us what needs to go.</p></div>
-        <div class="full">
-          <label for="f-pics">Photos</label>
-          <div class="drop" id="drop">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg>
-            <div>Tap to add photos, or drop them here</div>
-            <div class="files" id="files"></div>
-            <input id="f-pics" name="attachment" type="file" accept="image/*" multiple>
-          </div>
-        </div>
-        <div class="full"><label for="f-addr">Address or ZIP <b>*</b></label><input id="f-addr" name="address" autocomplete="street-address" required><p class="err">Enter an address or ZIP.</p></div>
-        <div class="full"><label for="f-when">When works for you?</label>
-          <select id="f-when" name="when"><option>As soon as possible</option><option>Today</option><option>Tomorrow</option><option>This week</option><option>I'm flexible</option></select></div>
-      </div>
-      <button class="btn btn-red" type="submit">Send my request</button>
-      <p class="small">Prefer to talk? Call or text (346) 229-9942.</p>
-    </form>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="sec light" id="about">
-  <div class="wrap about">
-    <div class="rv">
-      <span class="kicker">Local and owner-run</span>
-      <h2>Two teammates. One trailer. Zero excuses.</h2>
-      <p>Haul Bros started on the soccer field. Rodrigo Troconis played four years of varsity soccer, earned District MVP and spent five years in MLS NEXT, and he's heading to college to keep playing. Diego Favaloro moved here from Oregon with the same love for the game, and that's where we met: as teammates.</p>
-      <p>Between practices and long drives to games, we kept talking about starting our own business one day. We worked for this moment, and now it's here. We bring what made us good teammates to every job: we show up on time, we outwork everyone, and we don't quit until it's done right.</p>
-      <p>When you call, you get one of us, not a call center. We treat your home like our own and leave it cleaner than we found it.</p>
-      <p class="sig">Rodrigo <span>&amp;</span> Diego</p>
-    </div>
-    <div class="photos rv">
-      <figure class="ph"><img src="assets/team.jpg" alt="Rodrigo and Diego, owners of Haul Bros" loading="lazy" onerror="this.parentNode.classList.add('empty')"><figcaption>Photo of Rodrigo &amp; Diego coming soon</figcaption></figure>
-      <figure class="ph"><img src="assets/truck-trailer.jpg" alt="The Haul Bros truck and 5x10 trailer" loading="lazy" onerror="this.parentNode.classList.add('empty')"><figcaption>Photo of our truck &amp; trailer coming soon</figcaption></figure>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="stats rv">
-      <div><strong>Within 24 hrs</strong><span>Most pickups, often same day</span></div>
-      <div><strong>From $70</strong><span>Grand opening pricing</span></div>
-      <div><strong>2 owners</strong><span>On every single job</span></div>
-    </div>
-  </div>
-</section>
-
 <!-- WHAT WE HAUL -->
 <section class="sec dark" id="haul">
   <div class="wrap">
@@ -535,24 +460,6 @@ footer .legal{margin-top:46px;padding-top:22px;border-top:1px solid var(--line-d
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="sec mist" id="how">
-  <div class="wrap">
-    <div class="rv">
-      <span class="kicker">How it works</span>
-      <h2>Four steps to an empty garage.</h2>
-      <p class="lead">From your first text to a swept floor, usually within a day.</p>
-    </div>
-    <div class="steps" id="steps">
-      <div class="road" aria-hidden="true"><div class="fill"></div><div class="truck"><svg><use href="#i-truck"/></svg></div></div>
-      <div class="step"><div class="n">1</div><h3>Text us photos</h3><p>Or fill out the form. Show us what's going and where it is.</p></div>
-      <div class="step"><div class="n">2</div><h3>Get your price</h3><p>We text back a price, usually within the hour. No obligation.</p></div>
-      <div class="step"><div class="n">3</div><h3>We load it up</h3><p>Same day or next. We carry it all out, from any room or floor.</p></div>
-      <div class="step"><div class="n">4</div><h3>Swept clean</h3><p>We sweep up, haul it off and you pay when it's done.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- PRICING -->
 <section class="sec light" id="pricing">
   <div class="wrap price-grid">
@@ -584,6 +491,49 @@ footer .legal{margin-top:46px;padding-top:22px;border-top:1px solid var(--line-d
       <div class="load"><div class="nm">3/4 trailer<small>Two rooms or most of a garage</small></div><div class="amt"><small>FROM</small>$295</div><div class="bed"><i style="--f:75%"></i></div></div>
       <div class="load"><div class="nm">Full trailer<small>A full garage or move-out</small></div><div class="amt"><small>FROM</small>$350</div><div class="bed"><i style="--f:100%"></i></div></div>
       <div class="foot">Heavy or hard-to-reach loads may cost a bit more. Bigger than one trailer? We'll make extra trips and give you one price for all of it.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec mist" id="how">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker">How it works</span>
+      <h2>Four steps to an empty garage.</h2>
+      <p class="lead">From your first text to a swept floor, usually within a day.</p>
+    </div>
+    <div class="steps" id="steps">
+      <div class="road" aria-hidden="true"><div class="fill"></div><div class="truck"><svg><use href="#i-truck"/></svg></div></div>
+      <div class="step"><div class="n">1</div><h3>Text us photos</h3><p>Or fill out the form. Show us what's going and where it is.</p></div>
+      <div class="step"><div class="n">2</div><h3>Get your price</h3><p>We text back a price, usually within the hour. No obligation.</p></div>
+      <div class="step"><div class="n">3</div><h3>We load it up</h3><p>Same day or next. We carry it all out, from any room or floor.</p></div>
+      <div class="step"><div class="n">4</div><h3>Swept clean</h3><p>We sweep up, haul it off and you pay when it's done.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec light" id="about">
+  <div class="wrap about">
+    <div class="rv">
+      <span class="kicker">Local and owner-run</span>
+      <h2>Two teammates. One trailer. Zero excuses.</h2>
+      <p>Haul Bros started on the soccer field. Rodrigo Troconis played four years of varsity soccer, earned District MVP and spent five years in MLS NEXT, and he's heading to college to keep playing. Diego Favaloro moved here from Oregon with the same love for the game, and that's where we met: as teammates.</p>
+      <p>Between practices and long drives to games, we kept talking about starting our own business one day. We worked for this moment, and now it's here. We bring what made us good teammates to every job: we show up on time, we outwork everyone, and we don't quit until it's done right.</p>
+      <p>When you call, you get one of us, not a call center. We treat your home like our own and leave it cleaner than we found it.</p>
+      <p class="sig">Rodrigo <span>&amp;</span> Diego</p>
+    </div>
+    <div class="photos rv">
+      <figure class="ph"><img src="assets/team.jpg" alt="Rodrigo and Diego, owners of Haul Bros" loading="lazy" onerror="this.parentNode.classList.add('empty')"><figcaption>Photo of Rodrigo &amp; Diego coming soon</figcaption></figure>
+      <figure class="ph"><img src="assets/truck-trailer.jpg" alt="The Haul Bros truck and 5x10 trailer" loading="lazy" onerror="this.parentNode.classList.add('empty')"><figcaption>Photo of our truck &amp; trailer coming soon</figcaption></figure>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats rv">
+      <div><strong>Within 24 hrs</strong><span>Most pickups, often same day</span></div>
+      <div><strong>From $70</strong><span>Grand opening pricing</span></div>
+      <div><strong>2 owners</strong><span>On every single job</span></div>
     </div>
   </div>
 </section>
@@ -633,6 +583,57 @@ footer .legal{margin-top:46px;padding-top:22px;border-top:1px solid var(--line-d
     </div>
   </div>
 </section>
+
+<!-- QUOTE -->
+<section class="sec dark" id="quote">
+  <div class="wrap quote">
+    <div class="rv">
+      <span class="kicker">Free quote</span>
+      <h2>Send it. We'll price it.</h2>
+      <p class="lead">Takes a minute. Tell us what's going and add a few photos. We text you back with a price, usually within the hour.</p>
+      <ul>
+        <li>Your price before we lift anything</li>
+        <li>Same-day and next-day pickups</li>
+        <li>No fuel charges, no surprise fees</li>
+      </ul>
+      <div class="acts">
+        <a class="btn btn-red" href="tel:+13462299942"><svg><use href="#i-phone"/></svg>Call us</a>
+        <a class="btn btn-out" href="sms:+13462299942"><svg><use href="#i-chat"/></svg>Text photos</a>
+      </div>
+    </div>
+    <form class="form rv" id="qform" action="https://formsubmit.co/haulbroshauling@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
+      <input type="hidden" name="_subject" value="New Haul Bros pickup request">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://haulbros.github.io/?sent=1#quote">
+      <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <h3>Request a pickup</h3>
+      <p class="note">We'll text you back fast. Fields marked <b style="color:var(--red-ink)">*</b> are required.</p>
+      <div class="sent" id="sent" role="status">Got it! We'll text you back shortly with your price.</div>
+      <div class="grid">
+        <div><label for="f-name">Full name <b>*</b></label><input id="f-name" name="name" autocomplete="name" required><p class="err">Enter your name.</p></div>
+        <div><label for="f-phone">Phone <b>*</b></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required><p class="err">Enter a number we can text.</p></div>
+        <div class="full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="Optional"></div>
+        <div class="full"><label for="f-items">What needs to go? <b>*</b></label><textarea id="f-items" name="items" placeholder="Example: a couch, two mattresses and some boxes in the garage" required></textarea><p class="err">Tell us what needs to go.</p></div>
+        <div class="full">
+          <label for="f-pics">Photos</label>
+          <div class="drop" id="drop">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg>
+            <div>Tap to add photos, or drop them here</div>
+            <div class="files" id="files"></div>
+            <input id="f-pics" name="attachment" type="file" accept="image/*" multiple>
+          </div>
+        </div>
+        <div class="full"><label for="f-addr">Address or ZIP <b>*</b></label><input id="f-addr" name="address" autocomplete="street-address" required><p class="err">Enter an address or ZIP.</p></div>
+        <div class="full"><label for="f-when">When works for you?</label>
+          <select id="f-when" name="when"><option>As soon as possible</option><option>Today</option><option>Tomorrow</option><option>This week</option><option>I'm flexible</option></select></div>
+      </div>
+      <button class="btn btn-red" type="submit">Send my request</button>
+      <p class="small">Prefer to talk? Call or text (346) 229-9942.</p>
+    </form>
+  </div>
+</section>
+
 </main>
 
 <footer>
